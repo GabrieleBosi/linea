@@ -23,15 +23,16 @@ export function AppHeader() {
 
   return (
     <header className={cn('border-b bg-card', pinned && 'sticky top-0 z-20')}>
-      <div className="mx-auto flex h-12 max-w-[1440px] items-center gap-4 px-4">
+      <div className="mx-auto flex h-12 max-w-[1440px] items-center gap-2 px-3 sm:gap-4 sm:px-4">
         <Link to="/requests" className="flex items-baseline gap-2">
           <span className="text-base font-semibold text-primary">Linea</span>
-          <span className="text-sm text-muted-foreground">Ferralba Steel</span>
+          <span className="hidden text-sm text-muted-foreground sm:inline">Ferralba Steel</span>
         </Link>
 
         <div className="flex-1" />
 
         <form
+          className="hidden md:block"
           role="search"
           onSubmit={(e) => {
             e.preventDefault()
@@ -85,7 +86,7 @@ export function AppHeader() {
           </div>
         )}
 
-        <span className="text-sm text-muted-foreground">{PERSONAS[role].name}</span>
+        <span className="hidden text-sm text-muted-foreground sm:inline">{PERSONAS[role].name}</span>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

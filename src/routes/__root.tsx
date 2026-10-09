@@ -59,8 +59,9 @@ function useShortcuts() {
 
 function RootLayout() {
   useShortcuts()
-  // The landing page stands on its own; the app chrome starts at the requests list.
-  const landing = useRouterState({ select: (s) => s.location.pathname === '/' })
+  // The landing page stands on its own; the app chrome starts at the requests list. The resolved
+  // location changes once the next page has loaded, so the landing never shows inside the chrome.
+  const landing = useRouterState({ select: (s) => (s.resolvedLocation ?? s.location).pathname === '/' })
   if (landing) {
     return (
       <SessionProvider>
@@ -76,9 +77,10 @@ function RootLayout() {
       <div className="min-h-screen bg-background">
         <AppHeader />
         {isStaticBuild && <ReplayBanner />}
-        <div className="mx-auto flex max-w-[1440px]">
-          <nav aria-label="Main" className="min-h-[calc(100vh-3rem)] w-52 shrink-0 border-r bg-sidebar px-3 py-4">
-            <ul className="space-y-1">
+        {/* Below 768 px the main nav is a row above the page; from 768 px a column on the left. */}
+        <div className="mx-auto flex max-w-[1440px] flex-col md:flex-row">
+          <nav aria-label="Main" className="shrink-0 border-b bg-sidebar px-3 py-2 md:min-h-[calc(100vh-3rem)] md:w-52 md:border-b-0 md:border-r md:py-4">
+            <ul className="flex flex-wrap gap-1 md:block md:space-y-1">
               {NAV.map((item) => (
                 <li key={item.to}>
                   <Link
@@ -93,7 +95,7 @@ function RootLayout() {
               ))}
             </ul>
           </nav>
-          <main className="min-w-0 flex-1 px-6 py-5">
+          <main className="min-w-0 flex-1 px-3 py-4 md:px-6 md:py-5">
             <Outlet />
           </main>
         </div>

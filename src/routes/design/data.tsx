@@ -102,7 +102,7 @@ function DataPage() {
 
       <section>
         <h2 className="mb-2 text-base font-semibold">What a one-row quote history can&apos;t tell you</h2>
-        <div className="rounded-md border bg-card">
+        <div className="overflow-x-auto rounded-md border bg-card">
           <table className="w-full text-sm">
             <thead>
               <tr>
@@ -124,7 +124,7 @@ function DataPage() {
 
       <section>
         <h2 className="mb-2 text-base font-semibold">The reference scoring rule</h2>
-        <div className="grid grid-cols-5 gap-2 text-sm">
+        <div className="grid grid-cols-2 gap-2 text-sm sm:grid-cols-5">
           {[
             ['Customer', SCORE_WEIGHTS.customer, 'Same customer.'],
             ['Product', SCORE_WEIGHTS.product, `Same family and size. Next size up or down in the catalog: ${SCORE_WEIGHTS.product_adjacent}.`],
@@ -149,7 +149,7 @@ function DataPage() {
         {!summaries.isError && insight.isPending && <p className="text-sm text-muted-foreground">Ranking the pool…</p>}
         {insight.isError && <p className="text-sm text-destructive">The pool could not be read: {insight.error.message}.</p>}
         {insight.data && (
-          <div className="rounded-md border bg-card">
+          <div className="overflow-x-auto rounded-md border bg-card">
             <table className="w-full text-sm">
               <thead>
                 <tr>

@@ -115,7 +115,7 @@ export function LineComposer({ requestId, requestRef, customerName, line, open, 
 
   return (
     <Sheet open={open} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent side="right" className="w-[440px] overflow-y-auto sm:max-w-[440px]">
+      <SheetContent side="right" className="w-full overflow-y-auto sm:w-[440px] sm:max-w-[440px]">
         <SheetHeader>
           <SheetTitle>{line ? `Line L${line.line_no}` : 'New line'}</SheetTitle>
           <SheetDescription>

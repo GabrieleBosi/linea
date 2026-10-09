@@ -167,7 +167,7 @@ function AiPage() {
         <p className="mt-1 text-sm text-muted-foreground">Four LLM steps, all built: two extraction steps graded by code, two text steps graded by code checks plus a judge. Every step has a schema, code checks and a human approval. Results from `evals/results/latest.json`, generated {latest.generated_at ? dateTime(latest.generated_at) : '—'}.</p>
       </header>
 
-      <section className="grid grid-cols-2 gap-3">
+      <section className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {STEP_CARDS.map((c) => (
           <article key={c.name} className="rounded-md border bg-card p-3 text-sm">
             <div className="flex items-center justify-between">
@@ -175,7 +175,7 @@ function AiPage() {
               <span className="rounded bg-muted px-1.5 py-0.5 text-xs">{c.scope}</span>
             </div>
             <p className="mt-1">{c.purpose}</p>
-            <dl className="mt-2 grid grid-cols-[90px_1fr] gap-x-2 gap-y-1 text-xs">
+            <dl className="mt-2 grid grid-cols-[90px_minmax(0,1fr)] gap-x-2 gap-y-1 text-xs [overflow-wrap:anywhere]">
               <dt className="text-muted-foreground">Schema</dt>
               <dd className="font-mono">{c.schema}</dd>
               <dt className="text-muted-foreground">Checks</dt>
@@ -250,7 +250,7 @@ function AiPage() {
                 {isStatic ? 'This demo replays recorded outputs, so it has no live run to measure. ' : 'No live run is recorded since the last reset. '}Replay runs are traced but left out of latency and cost. Latency comes from the quality cases of the latest eval run per step ({dateTime(latest.generated_at)}). The eval runner does not record tokens, so {isStatic ? 'tokens show in the recorded traces below.' : 'tokens and cost show after the first live run.'}
               </p>
             )}
-            <div className="rounded-md border bg-card">
+            <div className="overflow-x-auto rounded-md border bg-card">
               <table className="w-full text-sm">
                 <thead>
                   <tr>

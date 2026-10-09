@@ -34,7 +34,7 @@ export function TraceDrawer({ aiRunId, open, onClose }: { aiRunId: string | null
   const checks: Check[] = run.data?.checks ?? []
   return (
     <Sheet open={open} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent side="right" className="w-[560px] overflow-y-auto sm:max-w-[560px]">
+      <SheetContent side="right" className="w-full overflow-y-auto sm:w-[560px] sm:max-w-[560px]">
         <SheetHeader>
           <SheetTitle>AI trace</SheetTitle>
           <SheetDescription>{run.data ? `${run.data.step} · ${run.data.mode} · ${run.data.model}` : 'Loading the run…'}</SheetDescription>
@@ -59,7 +59,7 @@ export function TraceDrawer({ aiRunId, open, onClose }: { aiRunId: string | null
             <section>
               <h3 className="mb-1 font-semibold">Checks</h3>
               <CheckBadges checks={checks} />
-              <ul className="mt-1 space-y-0.5 text-xs text-muted-foreground">
+              <ul className="mt-1 space-y-0.5 text-xs text-muted-foreground [overflow-wrap:anywhere]">
                 {checks.map((c) => (
                   <li key={c.name}>
                     <span className={c.pass ? 'text-green-700' : 'text-amber-800'}>{c.pass ? '✓' : '!'}</span> {c.name}: {c.detail}
@@ -69,17 +69,17 @@ export function TraceDrawer({ aiRunId, open, onClose }: { aiRunId: string | null
             </section>
             <section>
               <h3 className="mb-1 font-semibold">Input</h3>
-              <pre className="max-h-64 overflow-auto rounded bg-muted p-2 text-xs whitespace-pre-wrap">{pretty(run.data.input)}</pre>
+              <pre className="max-h-64 overflow-auto rounded bg-muted p-2 text-xs whitespace-pre-wrap [overflow-wrap:anywhere]">{pretty(run.data.input)}</pre>
             </section>
             {run.data.raw_output && run.data.mode === 'revised' && (
               <section>
                 <h3 className="mb-1 font-semibold">First output, before revision</h3>
-                <pre className="max-h-64 overflow-auto rounded bg-muted p-2 text-xs whitespace-pre-wrap">{pretty(run.data.raw_output)}</pre>
+                <pre className="max-h-64 overflow-auto rounded bg-muted p-2 text-xs whitespace-pre-wrap [overflow-wrap:anywhere]">{pretty(run.data.raw_output)}</pre>
               </section>
             )}
             <section>
               <h3 className="mb-1 font-semibold">{run.data.output === null ? 'Raw output' : 'Output'}</h3>
-              <pre className="max-h-64 overflow-auto rounded bg-muted p-2 text-xs whitespace-pre-wrap">{pretty(run.data.output ?? run.data.raw_output)}</pre>
+              <pre className="max-h-64 overflow-auto rounded bg-muted p-2 text-xs whitespace-pre-wrap [overflow-wrap:anywhere]">{pretty(run.data.output ?? run.data.raw_output)}</pre>
             </section>
           </div>
         )}

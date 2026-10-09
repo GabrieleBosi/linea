@@ -24,16 +24,17 @@ const PAGES: Page[] = [
   { to: '/design/architecture', label: 'Architecture' },
 ]
 
-const LINK = 'block rounded px-2 py-1 text-sm hover:bg-accent'
+const LINK = 'block whitespace-nowrap rounded px-2 py-1 text-sm hover:bg-accent'
 const ACTIVE = { className: 'bg-accent font-medium' }
 
 function DesignLayout() {
   const pinned = usePinnedHeader()
   return (
-    <div className="grid grid-cols-[180px_1fr] gap-6">
-      <nav aria-label="Design" className={cn('sticky self-start', pinned ? 'top-[65px]' : 'top-4')}>
-        <p className="mb-2 px-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Design</p>
-        <ul className="space-y-0.5">
+    // Below 768 px the design nav is one row that scrolls sideways above the page.
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-4 md:grid-cols-[180px_minmax(0,1fr)] md:gap-6">
+      <nav aria-label="Design" className={cn('min-w-0 md:sticky md:self-start', pinned ? 'md:top-[65px]' : 'md:top-4')}>
+        <p className="mb-2 hidden px-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground md:block">Design</p>
+        <ul className="flex gap-1 overflow-x-auto pb-1 md:block md:space-y-0.5 md:overflow-visible md:pb-0">
           {PAGES.map((p) => (
             <li key={p.label}>
               {'scenario' in p ? (
