@@ -2,7 +2,7 @@
 
 **Quote-to-order with AI where it earns its place.** A working prototype for Ferralba Steel, a fictional producer of configurable steel beams: from a customer's first email to an executable order, with four bounded AI steps, evals behind every one, and a person approving every change.
 
-**[Open the live demo](DEMO_URL)**: the case study, both scenarios in a step player, and every screen. No sign-up, no keys; the AI steps replay recorded model outputs and your data stays in your browser tab.
+**[Open the live demo](https://linea-quote-to-order.netlify.app/)**: the case study, both scenarios in a step player, and every screen. No sign-up, no keys; the AI steps replay recorded model outputs and your data stays in your browser tab.
 
 ![The line composer: references from history, the suggested price, the win rate by margin band, and an AI price memo with its checks](docs/images/composer.png)
 
