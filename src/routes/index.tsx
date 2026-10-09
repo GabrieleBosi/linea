@@ -45,7 +45,7 @@ function Landing() {
       <div className="mx-auto max-w-3xl space-y-12 px-4 py-12 text-[15px] leading-relaxed sm:px-6">
         <header className="space-y-5">
           <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">Case study · product prototype</p>
-          <h1 className="text-3xl font-semibold leading-tight">Linea: quote-to-order with AI where it earns its place</h1>
+          <h1 className="text-3xl font-semibold leading-tight">Linea: AI quote-to-order</h1>
           <p className="text-lg text-muted-foreground">
             A working prototype for Ferralba Steel, a fictional producer of configurable steel beams. It takes a customer request from the first email to an executable order, with four bounded AI steps, evals behind every one, and a person approving every change.
           </p>
