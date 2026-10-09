@@ -1,0 +1,2206 @@
+[
+  {
+    "id": "f46b1c91-fafd-4386-b94d-6f2ff5664cb6",
+    "replay_key": "fa7ab2729ce9bf4bbf846e9dc2f33f5d13fe2f5f1ceaf5eedcdaf842160ebfbd",
+    "step": "intake_extract",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "text": "Subject: Request for quotation - Linz warehouse extension\n\nHello Marta,\n\nfollowing our call on Monday, please quote the following for the Linz warehouse extension:\n\n- 120 pcs HEA 200 in S355, 12 m, same as our order from last year;\n- 40 pcs HEA 220 in S355, 10 m.\n\nDelivery would be needed by the end of November. Please confirm the validity of the offer.\n\nBest regards,\nTomas Riedel\nEbrecht Fabrication",
+      "customer_hint": "Ebrecht Fabrication"
+    },
+    "raw_output": "{\"customer_name_guess\":\"Ebrecht Fabrication\",\"lines\":[{\"family\":\"HEA\",\"size\":200,\"material\":\"S355\",\"length_mm\":12000,\"quantity\":120,\"notes\":\"same as our order from last year\",\"source_span\":\"120 pcs HEA 200 in S355, 12 m\",\"confidence\":1},{\"family\":\"HEA\",\"size\":220,\"material\":\"S355\",\"length_mm\":10000,\"quantity\":40,\"notes\":\"\",\"source_span\":\"40 pcs HEA 220 in S355, 10 m\",\"confidence\":1}],\"open_questions\":[\"Which order from last year is the reference?\"],\"stated_date\":null,\"requested_delivery_date\":null,\"delivery_hint\":\"by the end of November\"}",
+    "output": {
+      "customer_name_guess": "Ebrecht Fabrication",
+      "lines": [
+        {
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "length_mm": 12000,
+          "quantity": 120,
+          "notes": "same as our order from last year",
+          "source_span": "120 pcs HEA 200 in S355, 12 m",
+          "confidence": 1
+        },
+        {
+          "family": "HEA",
+          "size": 220,
+          "material": "S355",
+          "length_mm": 10000,
+          "quantity": 40,
+          "notes": "",
+          "source_span": "40 pcs HEA 220 in S355, 10 m",
+          "confidence": 1
+        }
+      ],
+      "open_questions": [
+        "Which order from last year is the reference?"
+      ],
+      "stated_date": null,
+      "requested_delivery_date": null,
+      "delivery_hint": "by the end of November"
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "size_in_catalog",
+        "pass": true,
+        "detail": "Every size exists in the catalog."
+      },
+      {
+        "name": "quantity_positive",
+        "pass": true,
+        "detail": "Every quantity is a positive integer."
+      },
+      {
+        "name": "span_grounded",
+        "pass": true,
+        "detail": "2 span(s) found in the input."
+      },
+      {
+        "name": "units_normalized",
+        "pass": true,
+        "detail": "Lengths are in millimetres."
+      },
+      {
+        "name": "no_instruction_text",
+        "pass": true,
+        "detail": "No instruction-like text in the input."
+      },
+      {
+        "name": "dates_grounded",
+        "pass": true,
+        "detail": "Dates are null or supported by the text."
+      }
+    ],
+    "latency_ms": 3775,
+    "tokens_in": 1512,
+    "tokens_out": 291,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:00:00.000Z"
+  },
+  {
+    "id": "dd0638db-5077-4e93-9b9d-cdce79c137b8",
+    "replay_key": "7512bb89600e96e9e92a4668c01d92d8f6112623811171b5f8872418fc5d6723",
+    "step": "cover_text",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "sender": "Ferralba Steel",
+      "customer": "Ebrecht Fabrication",
+      "contact": null,
+      "revision": {
+        "revision_no": 1,
+        "lines": [
+          {
+            "line_no": 1,
+            "family": "HEA",
+            "size": 200,
+            "material": "S355",
+            "length_mm": 12000,
+            "quantity": 120,
+            "unit_price": 780.91,
+            "total_price": 93709.2,
+            "subject_to_feasibility": false
+          },
+          {
+            "line_no": 2,
+            "family": "HEA",
+            "size": 220,
+            "material": "S355",
+            "length_mm": 10000,
+            "quantity": 40,
+            "unit_price": 805.96,
+            "total_price": 32238.4,
+            "subject_to_feasibility": false
+          }
+        ]
+      },
+      "diff_from_previous": [],
+      "valid_until": "2026-10-22",
+      "lines_subject_to_feasibility": [],
+      "delivery_date": null
+    },
+    "raw_output": "{\"text\":\"Dear Ebrecht Fabrication team,\\n\\nPlease find our quotation, revision R1, below.\\n\\nLine 1: HEA 200 S355, 12000 mm, 120 pieces, total 93709.20 EUR.\\n\\nLine 2: HEA 220 S355, 10000 mm, 40 pieces, total 32238.40 EUR.\\n\\nThis offer is valid until 2026-10-22.\\n\\nFerralba Steel\"}",
+    "output": {
+      "text": "Dear Ebrecht Fabrication team,\n\nPlease find our quotation, revision R1, below.\n\nLine 1: HEA 200 S355, 12000 mm, 120 pieces, total 93709.20 EUR.\n\nLine 2: HEA 220 S355, 10000 mm, 40 pieces, total 32238.40 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "every_line_present",
+        "pass": true,
+        "detail": "2 line(s) with quantity and total."
+      },
+      {
+        "name": "validity_present",
+        "pass": true,
+        "detail": "Valid until 2026-10-22 is stated."
+      },
+      {
+        "name": "feasibility_disclaimer",
+        "pass": true,
+        "detail": "No line is subject to validation and the phrase is absent."
+      },
+      {
+        "name": "no_delivery_promise",
+        "pass": true,
+        "detail": "No date beyond the validity date."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "43 word(s), limit 160."
+      }
+    ],
+    "latency_ms": 2538,
+    "tokens_in": 1039,
+    "tokens_out": 137,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:03:00.000Z"
+  },
+  {
+    "id": "9c53d0a3-899a-4ee2-8389-06bf73efa4b3",
+    "replay_key": "ef3e9ff85e344f11dde1c70501c53e265a908d3a01b490ca33960b6b917eb0d3",
+    "step": "reply_interpret",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "reply_text": "Hello Marta,\n\nthanks for the offer. Line 1 (HEA 200) is fine, please go ahead at the quoted price.\nFor line 2 we now need 60 pieces instead of 40. Given the higher volume we expect a better unit price than in your offer.\n\nRegards,\nTomas",
+      "revision": {
+        "revision_no": 1,
+        "lines": [
+          {
+            "line_no": 1,
+            "family": "HEA",
+            "size": 200,
+            "material": "S355",
+            "length_mm": 12000,
+            "quantity": 120,
+            "unit_price": 780.91,
+            "total_price": 93709.2
+          },
+          {
+            "line_no": 2,
+            "family": "HEA",
+            "size": 220,
+            "material": "S355",
+            "length_mm": 10000,
+            "quantity": 40,
+            "unit_price": 805.96,
+            "total_price": 32238.4
+          }
+        ]
+      }
+    },
+    "raw_output": "{\"decisions\":[{\"line_no\":1,\"decision\":\"accept\",\"changes\":{\"quantity\":null,\"length_mm\":null,\"material\":null,\"size\":null,\"target_unit_price\":null},\"source_span\":\"Line 1 (HEA 200) is fine, please go ahead at the quoted price.\",\"confidence\":0.98},{\"line_no\":2,\"decision\":\"change\",\"changes\":{\"quantity\":60,\"length_mm\":null,\"material\":null,\"size\":null,\"target_unit_price\":null},\"source_span\":\"For line 2 we now need 60 pieces instead of 40. Given the higher volume we expect a better unit price than in your offer.\",\"confidence\":0.95}],\"overall\":\"partial\",\"needs_clarification\":[]}",
+    "output": {
+      "decisions": [
+        {
+          "line_no": 1,
+          "decision": "accept",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "Line 1 (HEA 200) is fine, please go ahead at the quoted price.",
+          "confidence": 0.98
+        },
+        {
+          "line_no": 2,
+          "decision": "change",
+          "changes": {
+            "quantity": 60,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "For line 2 we now need 60 pieces instead of 40. Given the higher volume we expect a better unit price than in your offer.",
+          "confidence": 0.95
+        }
+      ],
+      "overall": "partial",
+      "needs_clarification": []
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "all_lines_covered",
+        "pass": true,
+        "detail": "Every quoted line has exactly one decision."
+      },
+      {
+        "name": "span_grounded",
+        "pass": true,
+        "detail": "2 span(s) found in the input."
+      },
+      {
+        "name": "changes_are_numbers",
+        "pass": true,
+        "detail": "Changed quantities and prices are positive numbers."
+      },
+      {
+        "name": "no_instruction_text",
+        "pass": true,
+        "detail": "No instruction-like text in the input."
+      }
+    ],
+    "latency_ms": 2932,
+    "tokens_in": 1003,
+    "tokens_out": 169,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:04:00.000Z"
+  },
+  {
+    "id": "a5c7cc4e-7fdd-4bf8-8b31-5738e4097360",
+    "replay_key": "19d9c8f0d4cd9fc75aa15725e64fc62e4ad9dd1d131cc621dd04afce41dd9bd5",
+    "step": "cover_text",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "sender": "Ferralba Steel",
+      "customer": "Ebrecht Fabrication",
+      "contact": null,
+      "revision": {
+        "revision_no": 2,
+        "lines": [
+          {
+            "line_no": 2,
+            "family": "HEA",
+            "size": 220,
+            "material": "S355",
+            "length_mm": 10000,
+            "quantity": 60,
+            "unit_price": 805.96,
+            "total_price": 48357.6,
+            "subject_to_feasibility": false
+          }
+        ]
+      },
+      "diff_from_previous": [
+        {
+          "line_no": 2,
+          "change": "quantity 40 → 60"
+        }
+      ],
+      "valid_until": "2026-10-22",
+      "lines_subject_to_feasibility": [],
+      "delivery_date": null
+    },
+    "raw_output": "{\"text\":\"Dear Ebrecht Fabrication team,\\n\\nthank you for your request. Please find our revised quotation, R2, below, updating line 2 quantity from 40 to 60.\\n\\nLine 2: HEA 220 S355, 10000 mm, 60 pieces, total 48357.60 EUR.\\n\\nThis offer is valid until 2026-10-22.\\n\\nFerralba Steel\"}",
+    "output": {
+      "text": "Dear Ebrecht Fabrication team,\n\nthank you for your request. Please find our revised quotation, R2, below, updating line 2 quantity from 40 to 60.\n\nLine 2: HEA 220 S355, 10000 mm, 60 pieces, total 48357.60 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "every_line_present",
+        "pass": true,
+        "detail": "1 line(s) with quantity and total."
+      },
+      {
+        "name": "validity_present",
+        "pass": true,
+        "detail": "Valid until 2026-10-22 is stated."
+      },
+      {
+        "name": "feasibility_disclaimer",
+        "pass": true,
+        "detail": "No line is subject to validation and the phrase is absent."
+      },
+      {
+        "name": "no_delivery_promise",
+        "pass": true,
+        "detail": "No date beyond the validity date."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "44 word(s), limit 160."
+      }
+    ],
+    "latency_ms": 2486,
+    "tokens_in": 997,
+    "tokens_out": 114,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:06:00.000Z"
+  },
+  {
+    "id": "2b8b6a74-bf90-40e1-b5a0-3f3f8a3fa9ba",
+    "replay_key": "d4c78944afeab8269c074ead5519b1903223c387b59e2b400bc4a3fce7f4dd8d",
+    "step": "cover_text",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "sender": "Ferralba Steel",
+      "customer": "Ebrecht Fabrication",
+      "contact": null,
+      "revision": {
+        "revision_no": 2,
+        "lines": [
+          {
+            "line_no": 2,
+            "family": "HEA",
+            "size": 220,
+            "material": "S355",
+            "length_mm": 10000,
+            "quantity": 60,
+            "unit_price": 781.78,
+            "total_price": 46906.8,
+            "subject_to_feasibility": false
+          }
+        ]
+      },
+      "diff_from_previous": [
+        {
+          "line_no": 2,
+          "change": "quantity 40 → 60, unit price 805.96 → 781.78 EUR"
+        }
+      ],
+      "valid_until": "2026-10-22",
+      "lines_subject_to_feasibility": [],
+      "delivery_date": null
+    },
+    "raw_output": "{\"text\":\"Dear Ebrecht Fabrication team,\\n\\nthank you for your request. Please find our revised quotation, R2, below.\\n\\nChanges against the previous revision: Line 2 quantity changed from 40 to 60 pieces and unit price from 805.96 to 781.78 EUR.\\n\\nLine 2: HEA 220 S355, 10000 mm, 60 pieces, total 46906.80 EUR.\\n\\nThis offer is valid until 2026-10-22.\\n\\nFerralba Steel\"}",
+    "output": {
+      "text": "Dear Ebrecht Fabrication team,\n\nthank you for your request. Please find our revised quotation, R2, below.\n\nChanges against the previous revision: Line 2 quantity changed from 40 to 60 pieces and unit price from 805.96 to 781.78 EUR.\n\nLine 2: HEA 220 S355, 10000 mm, 60 pieces, total 46906.80 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "every_line_present",
+        "pass": true,
+        "detail": "1 line(s) with quantity and total."
+      },
+      {
+        "name": "validity_present",
+        "pass": true,
+        "detail": "Valid until 2026-10-22 is stated."
+      },
+      {
+        "name": "feasibility_disclaimer",
+        "pass": true,
+        "detail": "No line is subject to validation and the phrase is absent."
+      },
+      {
+        "name": "no_delivery_promise",
+        "pass": true,
+        "detail": "No date beyond the validity date."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "58 word(s), limit 160."
+      }
+    ],
+    "latency_ms": 3793,
+    "tokens_in": 1016,
+    "tokens_out": 144,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:07:00.000Z"
+  },
+  {
+    "id": "7f87ef4a-3380-4073-a066-55caad330edd",
+    "replay_key": "f907089741a5a01e98f9137d0b5f4277b890d87d8a1625aedd468f3c16e4ac16",
+    "step": "reply_interpret",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "reply_text": "Line 2 at 60 pieces is accepted at the revised price. Please proceed with both lines.\nTomas",
+      "revision": {
+        "revision_no": 2,
+        "lines": [
+          {
+            "line_no": 2,
+            "family": "HEA",
+            "size": 220,
+            "material": "S355",
+            "length_mm": 10000,
+            "quantity": 60,
+            "unit_price": 781.78,
+            "total_price": 46906.8
+          }
+        ]
+      }
+    },
+    "raw_output": "{\"decisions\":[{\"line_no\":2,\"decision\":\"accept\",\"changes\":{\"quantity\":null,\"length_mm\":null,\"material\":null,\"size\":null,\"target_unit_price\":null},\"source_span\":\"Line 2 at 60 pieces is accepted at the revised price.\",\"confidence\":0.98}],\"overall\":\"accept_all\",\"needs_clarification\":[\"The customer mentions 'Please proceed with both lines.', but the revision contains only line 2.\"]}",
+    "output": {
+      "decisions": [
+        {
+          "line_no": 2,
+          "decision": "accept",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "Line 2 at 60 pieces is accepted at the revised price.",
+          "confidence": 0.98
+        }
+      ],
+      "overall": "accept_all",
+      "needs_clarification": [
+        "The customer mentions 'Please proceed with both lines.', but the revision contains only line 2."
+      ]
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "all_lines_covered",
+        "pass": true,
+        "detail": "Every quoted line has exactly one decision."
+      },
+      {
+        "name": "span_grounded",
+        "pass": true,
+        "detail": "1 span(s) found in the input."
+      },
+      {
+        "name": "changes_are_numbers",
+        "pass": true,
+        "detail": "Changed quantities and prices are positive numbers."
+      },
+      {
+        "name": "no_instruction_text",
+        "pass": true,
+        "detail": "No instruction-like text in the input."
+      }
+    ],
+    "latency_ms": 2745,
+    "tokens_in": 906,
+    "tokens_out": 163,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:08:00.000Z"
+  },
+  {
+    "id": "5056dee6-e9a4-4fe8-ba5b-a8f7c9df3d71",
+    "replay_key": "ff3cf8a8ba5437c4a300334148778813a7d2f700705681f01e11967ef1e2606e",
+    "step": "intake_extract",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "text": "Subject: RFQ - Bridge maintenance platform, Salzburg\n\nDear Ms Keller,\n\nfor the maintenance platform project we need:\n1) HEA 240 in S460, 14 m long, 100 pieces\n2) IPE 300 in S355, 12 m, 80 pieces\n\nPlease send your best offer. The S460 beams are the critical item for the structural design.\n\nKind regards,\nIngrid Maurer\nTorvane Structures",
+      "customer_hint": "Torvane Structures"
+    },
+    "raw_output": "{\"customer_name_guess\":\"Torvane Structures\",\"lines\":[{\"family\":\"HEA\",\"size\":240,\"material\":\"S460\",\"length_mm\":14000,\"quantity\":100,\"notes\":\"critical item for the structural design\",\"source_span\":\"HEA 240 in S460, 14 m long, 100 pieces\",\"confidence\":1},{\"family\":\"IPE\",\"size\":300,\"material\":\"S355\",\"length_mm\":12000,\"quantity\":80,\"notes\":\"\",\"source_span\":\"IPE 300 in S355, 12 m, 80 pieces\",\"confidence\":1}],\"open_questions\":[],\"stated_date\":null,\"requested_delivery_date\":null,\"delivery_hint\":null}",
+    "output": {
+      "customer_name_guess": "Torvane Structures",
+      "lines": [
+        {
+          "family": "HEA",
+          "size": 240,
+          "material": "S460",
+          "length_mm": 14000,
+          "quantity": 100,
+          "notes": "critical item for the structural design",
+          "source_span": "HEA 240 in S460, 14 m long, 100 pieces",
+          "confidence": 1
+        },
+        {
+          "family": "IPE",
+          "size": 300,
+          "material": "S355",
+          "length_mm": 12000,
+          "quantity": 80,
+          "notes": "",
+          "source_span": "IPE 300 in S355, 12 m, 80 pieces",
+          "confidence": 1
+        }
+      ],
+      "open_questions": [],
+      "stated_date": null,
+      "requested_delivery_date": null,
+      "delivery_hint": null
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "size_in_catalog",
+        "pass": true,
+        "detail": "Every size exists in the catalog."
+      },
+      {
+        "name": "quantity_positive",
+        "pass": true,
+        "detail": "Every quantity is a positive integer."
+      },
+      {
+        "name": "span_grounded",
+        "pass": true,
+        "detail": "2 span(s) found in the input."
+      },
+      {
+        "name": "units_normalized",
+        "pass": true,
+        "detail": "Lengths are in millimetres."
+      },
+      {
+        "name": "no_instruction_text",
+        "pass": true,
+        "detail": "No instruction-like text in the input."
+      },
+      {
+        "name": "dates_grounded",
+        "pass": true,
+        "detail": "Dates are null or supported by the text."
+      }
+    ],
+    "latency_ms": 3341,
+    "tokens_in": 1506,
+    "tokens_out": 273,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:09:00.000Z"
+  },
+  {
+    "id": "fb74ba48-90d4-474a-bb9b-4b0ece796410",
+    "replay_key": "e77f6cf04348196afb8728ff3dbe36c92cd3759e336b68291b21a68751a7e076",
+    "step": "cover_text",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "sender": "Ferralba Steel",
+      "customer": "Torvane Structures",
+      "contact": null,
+      "revision": {
+        "revision_no": 1,
+        "lines": [
+          {
+            "line_no": 1,
+            "family": "HEA",
+            "size": 240,
+            "material": "S460",
+            "length_mm": 14000,
+            "quantity": 100,
+            "unit_price": 1430.5,
+            "total_price": 143050,
+            "subject_to_feasibility": true
+          },
+          {
+            "line_no": 2,
+            "family": "IPE",
+            "size": 300,
+            "material": "S355",
+            "length_mm": 12000,
+            "quantity": 80,
+            "unit_price": 819.43,
+            "total_price": 65554.4,
+            "subject_to_feasibility": false
+          }
+        ]
+      },
+      "diff_from_previous": [],
+      "valid_until": "2026-10-22",
+      "lines_subject_to_feasibility": [
+        1
+      ],
+      "delivery_date": null
+    },
+    "raw_output": "{\"text\":\"Dear Torvane Structures team,\\n\\nthank you for your request. Please find our quotation, revision R1, below.\\n\\nLine 1: HEA 240 S460, 14000 mm, 100 pieces, total 143050.00 EUR, subject to technical validation.\\n\\nLine 2: IPE 300 S355, 12000 mm, 80 pieces, total 65554.40 EUR.\\n\\nThis offer is valid until 2026-10-22.\\n\\nFerralba Steel\"}",
+    "output": {
+      "text": "Dear Torvane Structures team,\n\nthank you for your request. Please find our quotation, revision R1, below.\n\nLine 1: HEA 240 S460, 14000 mm, 100 pieces, total 143050.00 EUR, subject to technical validation.\n\nLine 2: IPE 300 S355, 12000 mm, 80 pieces, total 65554.40 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "every_line_present",
+        "pass": true,
+        "detail": "2 line(s) with quantity and total."
+      },
+      {
+        "name": "validity_present",
+        "pass": true,
+        "detail": "Valid until 2026-10-22 is stated."
+      },
+      {
+        "name": "feasibility_disclaimer",
+        "pass": true,
+        "detail": "The phrase sits with L1."
+      },
+      {
+        "name": "no_delivery_promise",
+        "pass": true,
+        "detail": "No date beyond the validity date."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "52 word(s), limit 160."
+      }
+    ],
+    "latency_ms": 2509,
+    "tokens_in": 1048,
+    "tokens_out": 151,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:12:00.000Z"
+  },
+  {
+    "id": "b18d6a21-d47f-4959-877c-f15ee30038fc",
+    "replay_key": "db0d374f693fc9848e5471c43a6d62fe30732b3d4559ab0d028b71f9b96ba056",
+    "step": "reply_interpret",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "reply_text": "Dear Ms Keller,\n\nthe IPE 300 line is accepted, please proceed with it.\nFor the HEA 240 in S460 we wait for your technical confirmation of the 14 m length before we accept.\n\nKind regards,\nIngrid Maurer",
+      "revision": {
+        "revision_no": 1,
+        "lines": [
+          {
+            "line_no": 1,
+            "family": "HEA",
+            "size": 240,
+            "material": "S460",
+            "length_mm": 14000,
+            "quantity": 100,
+            "unit_price": 1430.5,
+            "total_price": 143050
+          },
+          {
+            "line_no": 2,
+            "family": "IPE",
+            "size": 300,
+            "material": "S355",
+            "length_mm": 12000,
+            "quantity": 80,
+            "unit_price": 819.43,
+            "total_price": 65554.4
+          }
+        ]
+      }
+    },
+    "raw_output": "{\"decisions\":[{\"line_no\":1,\"decision\":\"unclear\",\"changes\":{\"quantity\":null,\"length_mm\":null,\"material\":null,\"size\":null,\"target_unit_price\":null},\"source_span\":\"For the HEA 240 in S460 we wait for your technical confirmation of the 14 m length before we accept.\",\"confidence\":0.95},{\"line_no\":2,\"decision\":\"accept\",\"changes\":{\"quantity\":null,\"length_mm\":null,\"material\":null,\"size\":null,\"target_unit_price\":null},\"source_span\":\"the IPE 300 line is accepted, please proceed with it.\",\"confidence\":0.98}],\"overall\":\"partial\",\"needs_clarification\":[\"Customer waits for technical confirmation of the 14 m length on line 1 before accepting.\"]}",
+    "output": {
+      "decisions": [
+        {
+          "line_no": 1,
+          "decision": "unclear",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "For the HEA 240 in S460 we wait for your technical confirmation of the 14 m length before we accept.",
+          "confidence": 0.95
+        },
+        {
+          "line_no": 2,
+          "decision": "accept",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "the IPE 300 line is accepted, please proceed with it.",
+          "confidence": 0.98
+        }
+      ],
+      "overall": "partial",
+      "needs_clarification": [
+        "Customer waits for technical confirmation of the 14 m length on line 1 before accepting."
+      ]
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "all_lines_covered",
+        "pass": true,
+        "detail": "Every quoted line has exactly one decision."
+      },
+      {
+        "name": "span_grounded",
+        "pass": true,
+        "detail": "2 span(s) found in the input."
+      },
+      {
+        "name": "changes_are_numbers",
+        "pass": true,
+        "detail": "Changed quantities and prices are positive numbers."
+      },
+      {
+        "name": "no_instruction_text",
+        "pass": true,
+        "detail": "No instruction-like text in the input."
+      }
+    ],
+    "latency_ms": 2864,
+    "tokens_in": 997,
+    "tokens_out": 181,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:13:00.000Z"
+  },
+  {
+    "id": "0b2b743e-7686-4206-b3c6-573e31f72e04",
+    "replay_key": "505a1c63d85b4b370c28d013b494052927263991f1ecc3dcc26561fbd8d41cfe",
+    "step": "cover_text",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "sender": "Ferralba Steel",
+      "customer": "Torvane Structures",
+      "contact": null,
+      "revision": {
+        "revision_no": 2,
+        "lines": [
+          {
+            "line_no": 3,
+            "family": "HEA",
+            "size": 260,
+            "material": "S355",
+            "length_mm": 14000,
+            "quantity": 100,
+            "unit_price": 1438.79,
+            "total_price": 143879,
+            "subject_to_feasibility": false
+          }
+        ]
+      },
+      "diff_from_previous": [
+        {
+          "line_no": 3,
+          "change": "new line"
+        }
+      ],
+      "valid_until": "2026-10-22",
+      "lines_subject_to_feasibility": [],
+      "delivery_date": null
+    },
+    "raw_output": "{\"text\":\"Dear Torvane Structures team,\\n\\nthank you for your request. Please find our quotation, revision R2, below, which adds line L3 as a new line.\\n\\nLine 3: HEA 260 S355, 14000 mm, 100 pieces, total 143879.00 EUR.\\n\\nThis offer is valid until 2026-10-22.\\n\\nFerralba Steel\"}",
+    "output": {
+      "text": "Dear Torvane Structures team,\n\nthank you for your request. Please find our quotation, revision R2, below, which adds line L3 as a new line.\n\nLine 3: HEA 260 S355, 14000 mm, 100 pieces, total 143879.00 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "every_line_present",
+        "pass": true,
+        "detail": "1 line(s) with quantity and total."
+      },
+      {
+        "name": "validity_present",
+        "pass": true,
+        "detail": "Valid until 2026-10-22 is stated."
+      },
+      {
+        "name": "feasibility_disclaimer",
+        "pass": true,
+        "detail": "No line is subject to validation and the phrase is absent."
+      },
+      {
+        "name": "no_delivery_promise",
+        "pass": true,
+        "detail": "No date beyond the validity date."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "44 word(s), limit 160."
+      }
+    ],
+    "latency_ms": 2692,
+    "tokens_in": 995,
+    "tokens_out": 113,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:15:00.000Z"
+  },
+  {
+    "id": "052768c7-6e15-41ed-a3d6-7a9c83e58f18",
+    "replay_key": "c1dc03c7dc91b107203b365811cf2f86bfeb487bd9efdb95baffe961fba317d7",
+    "step": "reply_interpret",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "reply_text": "We accept the HEA 260 in S355 at 14 m as proposed, 100 pieces, at the revised price.\nIngrid Maurer",
+      "revision": {
+        "revision_no": 2,
+        "lines": [
+          {
+            "line_no": 3,
+            "family": "HEA",
+            "size": 260,
+            "material": "S355",
+            "length_mm": 14000,
+            "quantity": 100,
+            "unit_price": 1438.79,
+            "total_price": 143879
+          }
+        ]
+      }
+    },
+    "raw_output": "{\"decisions\":[{\"line_no\":3,\"decision\":\"accept\",\"changes\":{\"quantity\":null,\"length_mm\":null,\"material\":null,\"size\":null,\"target_unit_price\":null},\"source_span\":\"We accept the HEA 260 in S355 at 14 m as proposed, 100 pieces, at the revised price.\",\"confidence\":0.99}],\"overall\":\"accept_all\",\"needs_clarification\":[]}",
+    "output": {
+      "decisions": [
+        {
+          "line_no": 3,
+          "decision": "accept",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "We accept the HEA 260 in S355 at 14 m as proposed, 100 pieces, at the revised price.",
+          "confidence": 0.99
+        }
+      ],
+      "overall": "accept_all",
+      "needs_clarification": []
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "all_lines_covered",
+        "pass": true,
+        "detail": "Every quoted line has exactly one decision."
+      },
+      {
+        "name": "span_grounded",
+        "pass": true,
+        "detail": "1 span(s) found in the input."
+      },
+      {
+        "name": "changes_are_numbers",
+        "pass": true,
+        "detail": "Changed quantities and prices are positive numbers."
+      },
+      {
+        "name": "no_instruction_text",
+        "pass": true,
+        "detail": "No instruction-like text in the input."
+      }
+    ],
+    "latency_ms": 1754,
+    "tokens_in": 923,
+    "tokens_out": 100,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:16:00.000Z"
+  },
+  {
+    "id": "45e52e0d-5591-472e-b452-f3f9e89890dc",
+    "replay_key": "1ff04079ac7e8d36e09b5c9c3b65a9a3421e83da8462804fb1260b0bd3990738",
+    "step": "price_memo",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "line": {
+        "family": "HEA",
+        "size": 200,
+        "material": "S355",
+        "length_mm": 12000,
+        "quantity": 120,
+        "customer": "Ebrecht Fabrication"
+      },
+      "cost_estimate": 74311.37612143118,
+      "unit_cost": 619.2614676785931,
+      "suggested_price": 780.91,
+      "floor": 728.5429031512862,
+      "range": [
+        751.5309073769334,
+        790.8831004835162
+      ],
+      "median_won_margin": 0.207,
+      "references": [
+        {
+          "ref_id": "FS-25-0117",
+          "date": "2025-01-28",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 110,
+          "unit_price": 763.6363636363636,
+          "margin": 0.214,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 15,
+            "quantity": 13.75,
+            "recency": 1.9239856987629906,
+            "total": 90.67398569876299
+          }
+        },
+        {
+          "ref_id": "Q-G0200",
+          "date": "2026-02-06",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 77,
+          "unit_price": 740.7792207792207,
+          "margin": 0.207,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 15,
+            "quantity": 9.625,
+            "recency": 5.356737495373965,
+            "total": 89.98173749537396
+          }
+        },
+        {
+          "ref_id": "Q-G0155",
+          "date": "2025-07-04",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 67,
+          "unit_price": 715.6716417910447,
+          "margin": 0.176,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 15,
+            "quantity": 8.375,
+            "recency": 2.9571959132099495,
+            "total": 86.33219591320994
+          }
+        },
+        {
+          "ref_id": "FS-25-0512",
+          "date": "2025-09-24",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S460",
+          "quantity": 80,
+          "unit_price": 893.75,
+          "margin": 0.194,
+          "outcome": "WON",
+          "revision": 1,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 0,
+            "quantity": 10.000000000000002,
+            "recency": 3.7015263339123052,
+            "total": 73.70152633391231
+          }
+        },
+        {
+          "ref_id": "Q-G0241",
+          "date": "2026-08-15",
+          "customer": "Halvorn Steel Supply",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 144,
+          "unit_price": 766.1111111111111,
+          "margin": 0.217,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 0,
+            "product": 30,
+            "material": 15,
+            "quantity": 12.5,
+            "recency": 9.011907541977694,
+            "total": 66.51190754197769
+          }
+        }
+      ],
+      "win_rate_bands": [
+        {
+          "label": "14–17%",
+          "n": 8,
+          "won": 6,
+          "win_rate": 0.75
+        },
+        {
+          "label": "17–20%",
+          "n": 58,
+          "won": 45,
+          "win_rate": 0.7758620689655172
+        },
+        {
+          "label": "20–23%",
+          "n": 42,
+          "won": 28,
+          "win_rate": 0.6666666666666666
+        },
+        {
+          "label": "23–26%",
+          "n": 3,
+          "won": 0,
+          "win_rate": 0
+        }
+      ]
+    },
+    "raw_output": "{\"memo\":\"The suggested price is 780.91 EUR per piece, which gives a 20.7 percent margin on the cost estimate. This follows won quotation FS-25-0117 for Ebrecht Fabrication at 763.64 EUR per piece and a 21.4 percent margin, as well as won quotation Q-G0200 at a 20.7 percent margin. The range from won references sits between 751.53 and 790.88 EUR per piece, leaving solid room to negotiate down if needed.\",\"cited_reference_ids\":[\"FS-25-0117\",\"Q-G0200\"]}",
+    "output": {
+      "memo": "The suggested price is 780.91 EUR per piece, which gives a 20.7 percent margin on the cost estimate. This follows won quotation FS-25-0117 for Ebrecht Fabrication at 763.64 EUR per piece and a 21.4 percent margin, as well as won quotation Q-G0200 at a 20.7 percent margin. The range from won references sits between 751.53 and 790.88 EUR per piece, leaving solid room to negotiate down if needed.",
+      "cited_reference_ids": [
+        "FS-25-0117",
+        "Q-G0200"
+      ]
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "numbers_grounded",
+        "pass": true,
+        "detail": "Every number in the text is in the input."
+      },
+      {
+        "name": "references_exist",
+        "pass": true,
+        "detail": "2 cited id(s), all in the list."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "68 word(s), limit 80."
+      },
+      {
+        "name": "price_in_range",
+        "pass": true,
+        "detail": "Price stated and inside 751.53 to 790.88."
+      },
+      {
+        "name": "numbers_displayed",
+        "pass": true,
+        "detail": "Every number matches a displayed value."
+      }
+    ],
+    "latency_ms": 2514,
+    "tokens_in": 1659,
+    "tokens_out": 153,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:00:00.000Z"
+  },
+  {
+    "id": "1a6d1b3d-4ea7-4f2a-afc7-e77b092050b0",
+    "replay_key": "b5a912f61614d59c28e77c4a9a00be4ce3807fcf87a069e88d5afa0587a6c97b",
+    "step": "price_memo",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "line": {
+        "family": "HEA",
+        "size": 220,
+        "material": "S355",
+        "length_mm": 10000,
+        "quantity": 40,
+        "customer": "Ebrecht Fabrication"
+      },
+      "cost_estimate": 26322.73969360875,
+      "unit_cost": 658.0684923402188,
+      "suggested_price": 805.96,
+      "floor": 774.1982262826102,
+      "range": [
+        798.6268110924984,
+        829.8467747039327
+      ],
+      "median_won_margin": 0.1835,
+      "references": [
+        {
+          "ref_id": "Q-G0204",
+          "date": "2026-03-13",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 51,
+          "unit_price": 561.9607843137255,
+          "margin": 0.186,
+          "outcome": "WON",
+          "revision": 3,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 11.76470588235294,
+            "recency": 5.895444246773394,
+            "total": 74.66015012912634
+          }
+        },
+        {
+          "ref_id": "Q-G0200",
+          "date": "2026-02-06",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 77,
+          "unit_price": 740.7792207792207,
+          "margin": 0.207,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 7.792207792207791,
+            "recency": 5.356737495373965,
+            "total": 70.14894528758175
+          }
+        },
+        {
+          "ref_id": "Q-G0155",
+          "date": "2025-07-04",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 67,
+          "unit_price": 715.6716417910447,
+          "margin": 0.176,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 8.955223880597014,
+            "recency": 2.9571959132099495,
+            "total": 68.91241979380696
+          }
+        },
+        {
+          "ref_id": "FS-26-0261",
+          "date": "2026-06-02",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 160,
+          "unit_price": 787.5,
+          "margin": 0.175,
+          "outcome": "LOST",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 3.75,
+            "recency": 7.359160066546099,
+            "total": 68.1091600665461
+          }
+        },
+        {
+          "ref_id": "Q-G0224",
+          "date": "2026-06-02",
+          "customer": "Varnholt Engineering",
+          "family": "HEA",
+          "size": 220,
+          "material": "S355",
+          "quantity": 36,
+          "unit_price": 1290.5555555555557,
+          "margin": 0.181,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 0,
+            "product": 30,
+            "material": 15,
+            "quantity": 13.5,
+            "recency": 7.359160066546099,
+            "total": 65.8591600665461
+          }
+        }
+      ],
+      "win_rate_bands": [
+        {
+          "label": "14–17%",
+          "n": 8,
+          "won": 6,
+          "win_rate": 0.75
+        },
+        {
+          "label": "17–20%",
+          "n": 58,
+          "won": 45,
+          "win_rate": 0.7758620689655172
+        },
+        {
+          "label": "20–23%",
+          "n": 42,
+          "won": 28,
+          "win_rate": 0.6666666666666666
+        },
+        {
+          "label": "23–26%",
+          "n": 3,
+          "won": 0,
+          "win_rate": 0
+        }
+      ]
+    },
+    "raw_output": "{\"memo\":\"The suggested price is 805.96 EUR per piece, which gives an 18.3 percent margin on the cost estimate. This is justified by WON reference Q-G0204 for Ebrecht Fabrication at an 18.6 percent margin. With the range from won references spanning 798.63 to 829.85 EUR per piece, you have room to negotiate down to that lower bound.\",\"cited_reference_ids\":[\"Q-G0204\"]}",
+    "output": {
+      "memo": "The suggested price is 805.96 EUR per piece, which gives an 18.3 percent margin on the cost estimate. This is justified by WON reference Q-G0204 for Ebrecht Fabrication at an 18.6 percent margin. With the range from won references spanning 798.63 to 829.85 EUR per piece, you have room to negotiate down to that lower bound.",
+      "cited_reference_ids": [
+        "Q-G0204"
+      ]
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "numbers_grounded",
+        "pass": true,
+        "detail": "Every number in the text is in the input."
+      },
+      {
+        "name": "references_exist",
+        "pass": true,
+        "detail": "1 cited id(s), all in the list."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "56 word(s), limit 80."
+      },
+      {
+        "name": "price_in_range",
+        "pass": true,
+        "detail": "Price stated and inside 798.63 to 829.85."
+      },
+      {
+        "name": "numbers_displayed",
+        "pass": true,
+        "detail": "Every number matches a displayed value."
+      }
+    ],
+    "latency_ms": 1988,
+    "tokens_in": 1653,
+    "tokens_out": 127,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:01:00.000Z"
+  },
+  {
+    "id": "4bfd1192-fae4-43f2-9034-6a97f7499038",
+    "replay_key": "7d91e54e4390f3906ccb4c990aeee713301a779ca6c13d8d2769456570dfa8fc",
+    "step": "price_memo",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "line": {
+        "family": "HEA",
+        "size": 220,
+        "material": "S355",
+        "length_mm": 10000,
+        "quantity": 60,
+        "customer": "Ebrecht Fabrication"
+      },
+      "cost_estimate": 38535.13391452634,
+      "unit_cost": 642.2522319087724,
+      "suggested_price": 799.32,
+      "floor": 755.590861069144,
+      "range": [
+        779.4323202776362,
+        817.1147988661226
+      ],
+      "median_won_margin": 0.1965,
+      "references": [
+        {
+          "ref_id": "Q-G0204",
+          "date": "2026-03-13",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 51,
+          "unit_price": 561.9607843137255,
+          "margin": 0.186,
+          "outcome": "WON",
+          "revision": 3,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 12.75,
+            "recency": 5.895444246773394,
+            "total": 75.6454442467734
+          }
+        },
+        {
+          "ref_id": "Q-G0200",
+          "date": "2026-02-06",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 77,
+          "unit_price": 740.7792207792207,
+          "margin": 0.207,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 11.688311688311689,
+            "recency": 5.356737495373965,
+            "total": 74.04504918368565
+          }
+        },
+        {
+          "ref_id": "Q-G0155",
+          "date": "2025-07-04",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 67,
+          "unit_price": 715.6716417910447,
+          "margin": 0.176,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 13.432835820895523,
+            "recency": 2.9571959132099495,
+            "total": 73.39003173410546
+          }
+        },
+        {
+          "ref_id": "FS-26-0261",
+          "date": "2026-06-02",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 160,
+          "unit_price": 787.5,
+          "margin": 0.175,
+          "outcome": "LOST",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 5.625,
+            "recency": 7.359160066546099,
+            "total": 69.9841600665461
+          }
+        },
+        {
+          "ref_id": "FS-25-0117",
+          "date": "2025-01-28",
+          "customer": "Ebrecht Fabrication",
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "quantity": 110,
+          "unit_price": 763.6363636363636,
+          "margin": 0.214,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 8.181818181818182,
+            "recency": 1.9239856987629906,
+            "total": 67.10580388058118
+          }
+        }
+      ],
+      "win_rate_bands": [
+        {
+          "label": "14–17%",
+          "n": 8,
+          "won": 6,
+          "win_rate": 0.75
+        },
+        {
+          "label": "17–20%",
+          "n": 58,
+          "won": 45,
+          "win_rate": 0.7758620689655172
+        },
+        {
+          "label": "20–23%",
+          "n": 42,
+          "won": 28,
+          "win_rate": 0.6666666666666666
+        },
+        {
+          "label": "23–26%",
+          "n": 3,
+          "won": 0,
+          "win_rate": 0
+        }
+      ]
+    },
+    "raw_output": "{\"memo\":\"The suggested price is 799.32 EUR per piece, which gives a 19.7 percent margin on the cost estimate. Past won quotes for Ebrecht Fabrication support this, including Q-G0204 with an 18.6 percent margin and Q-G0200 with a 20.7 percent margin. The range from won references of 779.43 to 817.11 EUR per piece gives room to negotiate down if needed.\",\"cited_reference_ids\":[\"Q-G0204\",\"Q-G0200\"]}",
+    "output": {
+      "memo": "The suggested price is 799.32 EUR per piece, which gives a 19.7 percent margin on the cost estimate. Past won quotes for Ebrecht Fabrication support this, including Q-G0204 with an 18.6 percent margin and Q-G0200 with a 20.7 percent margin. The range from won references of 779.43 to 817.11 EUR per piece gives room to negotiate down if needed.",
+      "cited_reference_ids": [
+        "Q-G0204",
+        "Q-G0200"
+      ]
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "numbers_grounded",
+        "pass": true,
+        "detail": "Every number in the text is in the input."
+      },
+      {
+        "name": "references_exist",
+        "pass": true,
+        "detail": "2 cited id(s), all in the list."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "59 word(s), limit 80."
+      },
+      {
+        "name": "price_in_range",
+        "pass": true,
+        "detail": "Price stated and inside 779.43 to 817.11."
+      },
+      {
+        "name": "numbers_displayed",
+        "pass": true,
+        "detail": "Every number matches a displayed value."
+      }
+    ],
+    "latency_ms": 3797,
+    "tokens_in": 1657,
+    "tokens_out": 151,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:02:00.000Z"
+  },
+  {
+    "id": "91875e35-36f1-4720-8b33-a91ad09228d4",
+    "replay_key": "246613e9603efed2cc7904087c302b3fafc12f58fb3bad0e6ce39c02c58382ef",
+    "step": "price_memo",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "line": {
+        "family": "HEA",
+        "size": 240,
+        "material": "S460",
+        "length_mm": 14000,
+        "quantity": 100,
+        "customer": "Torvane Structures"
+      },
+      "cost_estimate": 117014.95639751731,
+      "unit_cost": 1170.1495639751731,
+      "suggested_price": 1430.5,
+      "floor": 1376.6465458531447,
+      "range": [
+        1421.809919775423,
+        1437.5301768736767
+      ],
+      "median_won_margin": 0.182,
+      "references": [
+        {
+          "ref_id": "FS-25-0389",
+          "date": "2025-07-08",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 90,
+          "unit_price": 911.1111111111111,
+          "margin": 0.213,
+          "outcome": "LOST",
+          "revision": 3,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 0,
+            "quantity": 13.5,
+            "recency": 2.989759339999596,
+            "total": 76.4897593399996
+          }
+        },
+        {
+          "ref_id": "Q-G0127",
+          "date": "2025-01-01",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 95,
+          "unit_price": 490.5263157894737,
+          "margin": 0.177,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 0,
+            "quantity": 14.25,
+            "recency": 1.7868904811830992,
+            "total": 76.0368904811831
+          }
+        },
+        {
+          "ref_id": "Q-G0207",
+          "date": "2026-04-02",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 47,
+          "unit_price": 694.8936170212766,
+          "margin": 0.197,
+          "outcome": "LOST",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 0,
+            "quantity": 7.05,
+            "recency": 6.2272629775532,
+            "total": 73.27726297755319
+          }
+        },
+        {
+          "ref_id": "Q-G0011",
+          "date": "2023-01-25",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 131,
+          "unit_price": 925.4961832061068,
+          "margin": 0.186,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 0,
+            "quantity": 11.450381679389313,
+            "recency": 0.25789995034919905,
+            "total": 71.70828162973851
+          }
+        },
+        {
+          "ref_id": "Q-G0091",
+          "date": "2024-07-13",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 40,
+          "unit_price": 846,
+          "margin": 0.182,
+          "outcome": "WON",
+          "revision": 3,
+          "score": {
+            "customer": 30,
+            "product": 30,
+            "material": 0,
+            "quantity": 6,
+            "recency": 1.115794394315154,
+            "total": 67.11579439431516
+          }
+        }
+      ],
+      "win_rate_bands": [
+        {
+          "label": "14–17%",
+          "n": 8,
+          "won": 6,
+          "win_rate": 0.75
+        },
+        {
+          "label": "17–20%",
+          "n": 60,
+          "won": 47,
+          "win_rate": 0.7833333333333333
+        },
+        {
+          "label": "20–23%",
+          "n": 43,
+          "won": 29,
+          "win_rate": 0.6744186046511628
+        },
+        {
+          "label": "23–26%",
+          "n": 3,
+          "won": 0,
+          "win_rate": 0
+        }
+      ]
+    },
+    "raw_output": "{\"memo\":\"The suggested price is 1430.50 EUR per piece, an 18.2 percent margin on the cost estimate. Torvane Structures won quotation Q-G0091 at an 18.2 percent margin and quotation Q-G0127 at a 17.7 percent margin. The range from won references spans 1421.81 to 1437.53 EUR per piece, so there is little room to negotiate.\",\"cited_reference_ids\":[\"Q-G0091\",\"Q-G0127\"]}",
+    "output": {
+      "memo": "The suggested price is 1430.50 EUR per piece, an 18.2 percent margin on the cost estimate. Torvane Structures won quotation Q-G0091 at an 18.2 percent margin and quotation Q-G0127 at a 17.7 percent margin. The range from won references spans 1421.81 to 1437.53 EUR per piece, so there is little room to negotiate.",
+      "cited_reference_ids": [
+        "Q-G0091",
+        "Q-G0127"
+      ]
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "numbers_grounded",
+        "pass": true,
+        "detail": "Every number in the text is in the input."
+      },
+      {
+        "name": "references_exist",
+        "pass": true,
+        "detail": "2 cited id(s), all in the list."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "53 word(s), limit 80."
+      },
+      {
+        "name": "price_in_range",
+        "pass": true,
+        "detail": "Price stated and inside 1421.81 to 1437.53."
+      },
+      {
+        "name": "numbers_displayed",
+        "pass": true,
+        "detail": "Every number matches a displayed value."
+      }
+    ],
+    "latency_ms": 8893,
+    "tokens_in": 1662,
+    "tokens_out": 1160,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:03:00.000Z"
+  },
+  {
+    "id": "dbbdd52b-b564-424b-8a8a-5fddb12bbc71",
+    "replay_key": "4b5c0d4887d8a6296cb2f2bc78af3b26c8a46eb3de478ae93768cdf40492e868",
+    "step": "price_memo",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "line": {
+        "family": "IPE",
+        "size": 300,
+        "material": "S355",
+        "length_mm": 12000,
+        "quantity": 80,
+        "customer": "Torvane Structures"
+      },
+      "cost_estimate": 50640.92196972499,
+      "unit_cost": 633.0115246215623,
+      "suggested_price": 819.43,
+      "floor": 744.7194407312497,
+      "range": [
+        779.5708431300028,
+        842.8915108143307
+      ],
+      "median_won_margin": 0.2275,
+      "references": [
+        {
+          "ref_id": "Q-G0211",
+          "date": "2026-04-15",
+          "customer": "Baltic Frames",
+          "family": "IPE",
+          "size": 300,
+          "material": "S355",
+          "quantity": 92,
+          "unit_price": 765.2173913043479,
+          "margin": 0.231,
+          "outcome": "WON",
+          "revision": 4,
+          "score": {
+            "customer": 0,
+            "product": 30,
+            "material": 15,
+            "quantity": 13.043478260869565,
+            "recency": 6.452895643568004,
+            "total": 64.49637390443756
+          }
+        },
+        {
+          "ref_id": "Q-G0187",
+          "date": "2025-11-17",
+          "customer": "Quillon Structures",
+          "family": "IPE",
+          "size": 300,
+          "material": "S355",
+          "quantity": 92,
+          "unit_price": 715.7608695652174,
+          "margin": 0.188,
+          "outcome": "WON",
+          "revision": 1,
+          "score": {
+            "customer": 0,
+            "product": 30,
+            "material": 15,
+            "quantity": 13.043478260869565,
+            "recency": 4.291297778959641,
+            "total": 62.3347760398292
+          }
+        },
+        {
+          "ref_id": "Q-G0236",
+          "date": "2026-07-13",
+          "customer": "Torvane Structures",
+          "family": "IPE",
+          "size": 160,
+          "material": "S355",
+          "quantity": 134,
+          "unit_price": 383.5074626865672,
+          "margin": 0.249,
+          "outcome": "WON",
+          "revision": 1,
+          "score": {
+            "customer": 30,
+            "product": 0,
+            "material": 15,
+            "quantity": 8.955223880597014,
+            "recency": 8.233388761487763,
+            "total": 62.18861264208478
+          }
+        },
+        {
+          "ref_id": "FS-25-0389",
+          "date": "2025-07-08",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 90,
+          "unit_price": 911.1111111111111,
+          "margin": 0.213,
+          "outcome": "LOST",
+          "revision": 3,
+          "score": {
+            "customer": 30,
+            "product": 0,
+            "material": 15,
+            "quantity": 13.333333333333332,
+            "recency": 2.989759339999596,
+            "total": 61.32309267333292
+          }
+        },
+        {
+          "ref_id": "Q-G0144",
+          "date": "2025-04-26",
+          "customer": "Quillon Structures",
+          "family": "IPE",
+          "size": 300,
+          "material": "S355",
+          "quantity": 90,
+          "unit_price": 642.5555555555555,
+          "margin": 0.224,
+          "outcome": "WON",
+          "revision": 3,
+          "score": {
+            "customer": 0,
+            "product": 30,
+            "material": 15,
+            "quantity": 13.333333333333332,
+            "recency": 2.4481430255377497,
+            "total": 60.781476358871075
+          }
+        }
+      ],
+      "win_rate_bands": [
+        {
+          "label": "14–17%",
+          "n": 14,
+          "won": 13,
+          "win_rate": 0.9285714285714286
+        },
+        {
+          "label": "17–20%",
+          "n": 26,
+          "won": 21,
+          "win_rate": 0.8076923076923077
+        },
+        {
+          "label": "20–23%",
+          "n": 26,
+          "won": 13,
+          "win_rate": 0.5
+        },
+        {
+          "label": "23–26%",
+          "n": 7,
+          "won": 5,
+          "win_rate": 0.7142857142857143
+        }
+      ]
+    },
+    "raw_output": "{\"memo\":\"The suggested price is 819.43 EUR per piece, which gives a 22.7 percent margin on the cost estimate. Baltic Frames accepted Q-G0211 with a 23.1 percent margin, while Torvane Structures accepted Q-G0236 at a 24.9 percent margin. The range from won references sits between 779.57 and 842.89 EUR per piece, leaving solid room to negotiate down if challenged.\",\"cited_reference_ids\":[\"Q-G0211\",\"Q-G0236\"]}",
+    "output": {
+      "memo": "The suggested price is 819.43 EUR per piece, which gives a 22.7 percent margin on the cost estimate. Baltic Frames accepted Q-G0211 with a 23.1 percent margin, while Torvane Structures accepted Q-G0236 at a 24.9 percent margin. The range from won references sits between 779.57 and 842.89 EUR per piece, leaving solid room to negotiate down if challenged.",
+      "cited_reference_ids": [
+        "Q-G0211",
+        "Q-G0236"
+      ]
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "numbers_grounded",
+        "pass": true,
+        "detail": "Every number in the text is in the input."
+      },
+      {
+        "name": "references_exist",
+        "pass": true,
+        "detail": "2 cited id(s), all in the list."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "58 word(s), limit 80."
+      },
+      {
+        "name": "price_in_range",
+        "pass": true,
+        "detail": "Price stated and inside 779.57 to 842.89."
+      },
+      {
+        "name": "numbers_displayed",
+        "pass": true,
+        "detail": "Every number matches a displayed value."
+      }
+    ],
+    "latency_ms": 2134,
+    "tokens_in": 1655,
+    "tokens_out": 152,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:04:00.000Z"
+  },
+  {
+    "id": "08ebdfa1-5dcc-4319-98e8-fd155c078311",
+    "replay_key": "819b19864501e8bece7b511fdb9461b46c45fc5dbcc410bc946aaf03a6015a6e",
+    "step": "price_memo",
+    "mode": "live",
+    "model": "gemini-3.8-flash",
+    "request_id": null,
+    "line_id": null,
+    "input": {
+      "line": {
+        "family": "HEA",
+        "size": 260,
+        "material": "S355",
+        "length_mm": 14000,
+        "quantity": 100,
+        "customer": "Torvane Structures"
+      },
+      "cost_estimate": 117764.86251828731,
+      "unit_cost": 1177.648625182873,
+      "suggested_price": 1438.79,
+      "floor": 1385.46897080338,
+      "range": [
+        1430.921780295107,
+        1446.7427827799422
+      ],
+      "median_won_margin": 0.1815,
+      "references": [
+        {
+          "ref_id": "FS-25-0389",
+          "date": "2025-07-08",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 90,
+          "unit_price": 911.1111111111111,
+          "margin": 0.213,
+          "outcome": "LOST",
+          "revision": 3,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 13.5,
+            "recency": 2.989759339999596,
+            "total": 73.4897593399996
+          }
+        },
+        {
+          "ref_id": "Q-G0127",
+          "date": "2025-01-01",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 95,
+          "unit_price": 490.5263157894737,
+          "margin": 0.177,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 14.25,
+            "recency": 1.7868904811830992,
+            "total": 73.0368904811831
+          }
+        },
+        {
+          "ref_id": "Q-G0207",
+          "date": "2026-04-02",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 47,
+          "unit_price": 694.8936170212766,
+          "margin": 0.197,
+          "outcome": "LOST",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 7.05,
+            "recency": 6.2272629775532,
+            "total": 70.27726297755319
+          }
+        },
+        {
+          "ref_id": "Q-G0011",
+          "date": "2023-01-25",
+          "customer": "Torvane Structures",
+          "family": "HEA",
+          "size": 240,
+          "material": "S355",
+          "quantity": 131,
+          "unit_price": 925.4961832061068,
+          "margin": 0.186,
+          "outcome": "WON",
+          "revision": 2,
+          "score": {
+            "customer": 30,
+            "product": 12,
+            "material": 15,
+            "quantity": 11.450381679389313,
+            "recency": 0.25789995034919905,
+            "total": 68.70828162973851
+          }
+        },
+        {
+          "ref_id": "Q-G0220",
+          "date": "2026-05-20",
+          "customer": "Rudmark Industrial",
+          "family": "HEA",
+          "size": 260,
+          "material": "S355",
+          "quantity": 100,
+          "unit_price": 1438.6,
+          "margin": 0.171,
+          "outcome": "LOST",
+          "revision": 3,
+          "score": {
+            "customer": 0,
+            "product": 30,
+            "material": 15,
+            "quantity": 15,
+            "recency": 7.101838858027941,
+            "total": 67.10183885802795
+          }
+        }
+      ],
+      "win_rate_bands": [
+        {
+          "label": "14–17%",
+          "n": 8,
+          "won": 6,
+          "win_rate": 0.75
+        },
+        {
+          "label": "17–20%",
+          "n": 60,
+          "won": 47,
+          "win_rate": 0.7833333333333333
+        },
+        {
+          "label": "20–23%",
+          "n": 43,
+          "won": 29,
+          "win_rate": 0.6744186046511628
+        },
+        {
+          "label": "23–26%",
+          "n": 3,
+          "won": 0,
+          "win_rate": 0
+        }
+      ]
+    },
+    "raw_output": "{\"memo\":\"The suggested price is 1438.79 EUR per piece, which gives an 18.2 percent margin on the cost estimate. Torvane Structures won quotation Q-G0127 at a 17.7 percent margin and Q-G0011 at an 18.6 percent margin. With the range from won references spanning 1430.92 to 1446.74 EUR per piece, there is narrow room to negotiate.\",\"cited_reference_ids\":[\"Q-G0127\",\"Q-G0011\"]}",
+    "output": {
+      "memo": "The suggested price is 1438.79 EUR per piece, which gives an 18.2 percent margin on the cost estimate. Torvane Structures won quotation Q-G0127 at a 17.7 percent margin and Q-G0011 at an 18.6 percent margin. With the range from won references spanning 1430.92 to 1446.74 EUR per piece, there is narrow room to negotiate.",
+      "cited_reference_ids": [
+        "Q-G0127",
+        "Q-G0011"
+      ]
+    },
+    "checks": [
+      {
+        "name": "schema_valid",
+        "pass": true,
+        "detail": "Output matches the schema."
+      },
+      {
+        "name": "numbers_grounded",
+        "pass": true,
+        "detail": "Every number in the text is in the input."
+      },
+      {
+        "name": "references_exist",
+        "pass": true,
+        "detail": "2 cited id(s), all in the list."
+      },
+      {
+        "name": "length_ok",
+        "pass": true,
+        "detail": "54 word(s), limit 80."
+      },
+      {
+        "name": "price_in_range",
+        "pass": true,
+        "detail": "Price stated and inside 1430.92 to 1446.74."
+      },
+      {
+        "name": "numbers_displayed",
+        "pass": true,
+        "detail": "Every number matches a displayed value."
+      }
+    ],
+    "latency_ms": 2266,
+    "tokens_in": 1668,
+    "tokens_out": 132,
+    "accepted": null,
+    "edited": null,
+    "created_at": "2026-09-22T08:05:00.000Z"
+  }
+]

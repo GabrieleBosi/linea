@@ -1,0 +1,321 @@
+{
+  "step": "intake_extract",
+  "model": "gemini-3.8-flash",
+  "quality": null,
+  "adversarial": null,
+  "control": null,
+  "heldout": {
+    "cases": 8,
+    "pass": 8,
+    "fail": 0,
+    "pass_rate": 1,
+    "results": [
+      {
+        "id": "held-001",
+        "kind": "objective",
+        "tags": [
+          "held-out",
+          "terse",
+          "chat-style"
+        ],
+        "latency_ms": 2823,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "customer_name_guess": null,
+          "lines": [
+            {
+              "family": "HEB",
+              "size": 300,
+              "material": "S355",
+              "length_mm": 8000,
+              "quantity": 12,
+              "notes": "",
+              "source_span": "12x HEB 300 s355 @ 8m",
+              "confidence": 1
+            }
+          ],
+          "open_questions": [],
+          "stated_date": null,
+          "requested_delivery_date": null,
+          "delivery_hint": "asap"
+        },
+        "pass": true,
+        "detail": "exact match",
+        "flagged": false,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "id": "held-002",
+        "kind": "objective",
+        "tags": [
+          "held-out",
+          "spec-notation"
+        ],
+        "latency_ms": 1956,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "customer_name_guess": null,
+          "lines": [
+            {
+              "family": "HEA",
+              "size": 160,
+              "material": "S235",
+              "length_mm": 6000,
+              "quantity": 24,
+              "notes": "",
+              "source_span": "HEA160 / S235 / L=6000 / Qty 24",
+              "confidence": 1
+            }
+          ],
+          "open_questions": [],
+          "stated_date": null,
+          "requested_delivery_date": null,
+          "delivery_hint": null
+        },
+        "pass": true,
+        "detail": "exact match",
+        "flagged": false,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "id": "held-003",
+        "kind": "objective",
+        "tags": [
+          "held-out",
+          "quantity-in-tonnes"
+        ],
+        "latency_ms": 3380,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "customer_name_guess": null,
+          "lines": [
+            {
+              "family": "IPE",
+              "size": 200,
+              "material": "S235",
+              "length_mm": 12000,
+              "quantity": null,
+              "notes": "approx. 5 t",
+              "source_span": "approx. 5 t of IPE 200 in S235, 12 m bars",
+              "confidence": 0.8
+            }
+          ],
+          "open_questions": [
+            "How many pieces/bars are required?"
+          ],
+          "stated_date": null,
+          "requested_delivery_date": null,
+          "delivery_hint": null
+        },
+        "pass": true,
+        "detail": "exact match",
+        "flagged": false,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "id": "held-004",
+        "kind": "objective",
+        "tags": [
+          "held-out",
+          "same-product-two-lengths"
+        ],
+        "latency_ms": 2904,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "customer_name_guess": null,
+          "lines": [
+            {
+              "family": "HEA",
+              "size": 200,
+              "material": "S355",
+              "length_mm": 12000,
+              "quantity": 20,
+              "notes": "For the mezzanine",
+              "source_span": "HEA 200 S355: 20 pcs at 12 m",
+              "confidence": 1
+            },
+            {
+              "family": "HEA",
+              "size": 200,
+              "material": "S355",
+              "length_mm": 6000,
+              "quantity": 15,
+              "notes": "For the mezzanine",
+              "source_span": "15 pcs at 6 m",
+              "confidence": 0.95
+            }
+          ],
+          "open_questions": [],
+          "stated_date": null,
+          "requested_delivery_date": null,
+          "delivery_hint": null
+        },
+        "pass": true,
+        "detail": "exact match",
+        "flagged": false,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "id": "held-005",
+        "kind": "objective",
+        "tags": [
+          "held-out",
+          "non-english",
+          "french"
+        ],
+        "latency_ms": 2551,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "customer_name_guess": null,
+          "lines": [
+            {
+              "family": "IPE",
+              "size": 270,
+              "material": "S355",
+              "length_mm": 10000,
+              "quantity": 60,
+              "notes": "",
+              "source_span": "60 pièces IPE 270 en S355, longueur 10 m",
+              "confidence": 1
+            }
+          ],
+          "open_questions": [],
+          "stated_date": null,
+          "requested_delivery_date": null,
+          "delivery_hint": null
+        },
+        "pass": true,
+        "detail": "exact match",
+        "flagged": false,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "id": "held-006",
+        "kind": "objective",
+        "tags": [
+          "held-out",
+          "quoted-thread"
+        ],
+        "latency_ms": 4244,
+        "mode": "live",
+        "checks_failed": [
+          "units_normalized"
+        ],
+        "output": {
+          "customer_name_guess": null,
+          "lines": [
+            {
+              "family": "HEB",
+              "size": 220,
+              "material": "S460",
+              "length_mm": 12000,
+              "quantity": 45,
+              "notes": "as discussed on the phone",
+              "source_span": "45 pcs HEB 220 S460, 12 m",
+              "confidence": 1
+            }
+          ],
+          "open_questions": [],
+          "stated_date": null,
+          "requested_delivery_date": null,
+          "delivery_hint": null
+        },
+        "pass": true,
+        "detail": "exact match",
+        "flagged": false,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "id": "held-007",
+        "kind": "objective",
+        "tags": [
+          "held-out",
+          "german",
+          "dates"
+        ],
+        "latency_ms": 2695,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "customer_name_guess": null,
+          "lines": [
+            {
+              "family": "HEA",
+              "size": 280,
+              "material": "S355",
+              "length_mm": 14000,
+              "quantity": 80,
+              "notes": "frei Baustelle",
+              "source_span": "80 Stk HEA 280 S355, 14 m",
+              "confidence": 1
+            }
+          ],
+          "open_questions": [],
+          "stated_date": "2026-04-03",
+          "requested_delivery_date": "2026-05-15",
+          "delivery_hint": null
+        },
+        "pass": true,
+        "detail": "exact match",
+        "flagged": false,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      },
+      {
+        "id": "held-008",
+        "kind": "objective",
+        "tags": [
+          "held-out",
+          "dash-notation",
+          "lowercase"
+        ],
+        "latency_ms": 4282,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "customer_name_guess": null,
+          "lines": [
+            {
+              "family": "HEA",
+              "size": 240,
+              "material": "S355",
+              "length_mm": 9000,
+              "quantity": 33,
+              "notes": "",
+              "source_span": "HEA-240 s355, 9 m, 33 pcs",
+              "confidence": 1
+            }
+          ],
+          "open_questions": [],
+          "stated_date": null,
+          "requested_delivery_date": null,
+          "delivery_hint": null
+        },
+        "pass": true,
+        "detail": "exact match",
+        "flagged": false,
+        "precision": 1,
+        "recall": 1,
+        "f1": 1
+      }
+    ]
+  }
+}

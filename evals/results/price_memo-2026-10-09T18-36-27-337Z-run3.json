@@ -1,0 +1,537 @@
+{
+  "step": "price_memo",
+  "model": "gemini-3.8-flash",
+  "judge_model": "gemini-3.1-pro-preview",
+  "quality": {
+    "cases": 20,
+    "pass": 19,
+    "fail": 1,
+    "pass_rate": 0.95,
+    "results": [
+      {
+        "id": "memo-001",
+        "kind": "judged",
+        "tags": [
+          "repeat-customer",
+          "won-refs"
+        ],
+        "latency_ms": 2416,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 780.91 EUR per piece, which gives a 20.7 percent margin on the cost estimate. This follows past won deals with Ebrecht Fabrication, including FS-25-0117 at a 21.4 percent margin and 763.64 EUR per piece, and Q-G0200 at a 20.7 percent margin. The range from won references of 751.53 to 790.88 EUR per piece offers room to negotiate down to the 20 to 23 percent band.",
+          "cited_reference_ids": [
+            "FS-25-0117",
+            "Q-G0200"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites references, contains no invented facts, and meets the length constraints."
+        }
+      },
+      {
+        "id": "memo-002",
+        "kind": "judged",
+        "tags": [
+          "next-size",
+          "margins-differ"
+        ],
+        "latency_ms": 2383,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 805.96 EUR per piece, which gives an 18.3 percent margin on the cost estimate. This is justified by WON reference Q-G0204 for Ebrecht Fabrication at an 18.6 percent margin. The range from won references of 798.63 to 829.85 EUR per piece leaves narrow room to negotiate down to 798.63 EUR.",
+          "cited_reference_ids": [
+            "Q-G0204"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, concise, accurately cites a reference, and uses only facts provided in the input data."
+        }
+      },
+      {
+        "id": "memo-003",
+        "kind": "judged",
+        "tags": [
+          "new-configuration",
+          "no-won-ref"
+        ],
+        "latency_ms": 3069,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 1430.50 EUR per piece, which gives an 18.2 percent margin on the cost estimate and matches the median won margin of the references. Torvane Structures won Q-G0127 at a 17.7 percent margin and Q-G0091 at an 18.2 percent margin. The range from won references sits between 1421.81 and 1437.53 EUR per piece, leaving narrow room to negotiate before hitting the 1376.65 EUR floor.",
+          "cited_reference_ids": [
+            "Q-G0127",
+            "Q-G0091"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites references, contains no invented facts, and meets the length constraints."
+        }
+      },
+      {
+        "id": "memo-004",
+        "kind": "judged",
+        "tags": [
+          "other-customer",
+          "margins-differ"
+        ],
+        "latency_ms": 3188,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 819.43 EUR per piece, a 22.7 percent margin on the cost estimate. Baltic Frames won quotation Q-G0211 with a 23.1 percent margin, while Torvane Structures won Q-G0236 with a 24.9 percent margin. The range from won references of 779.57 to 842.89 EUR per piece leaves room to negotiate down if needed.",
+          "cited_reference_ids": [
+            "Q-G0211",
+            "Q-G0236"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurate, well-supported by references, and concise."
+        }
+      },
+      {
+        "id": "memo-005",
+        "kind": "judged",
+        "tags": [
+          "alternative"
+        ],
+        "latency_ms": 2033,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 1438.79 EUR per piece, an 18.2 percent margin on the cost estimate. Torvane Structures won Q-G0127 at a 17.7 percent margin and Q-G0011 at an 18.6 percent margin. The range from won references of 1430.92 to 1446.74 EUR per piece leaves narrow room to negotiate.",
+          "cited_reference_ids": [
+            "Q-G0127",
+            "Q-G0011"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurate, properly cites references, and meets the length constraints."
+        }
+      },
+      {
+        "id": "memo-006",
+        "kind": "judged",
+        "tags": [
+          "repeat-customer"
+        ],
+        "latency_ms": 1953,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 604.08 EUR per piece, a 19.9 percent margin on the cost estimate. Halvorn Steel Supply won Q-G0159 at a 16.6 percent margin and FS-26-0198 at a 21.4 percent margin. The range from won references of 580.54 to 618.35 EUR per piece leaves room to negotiate down to 580.54 EUR.",
+          "cited_reference_ids": [
+            "Q-G0159",
+            "FS-26-0198"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, concise, accurately cites references, and contains no invented facts."
+        }
+      },
+      {
+        "id": "memo-007",
+        "kind": "judged",
+        "tags": [
+          "small-quantity"
+        ],
+        "latency_ms": 2335,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 286.61 EUR per piece, a 19.6 percent margin on the cost estimate. Halvorn Steel Supply accepted Q-G0085 with a 20.1 percent margin and Q-G0232 with a 19.1 percent margin, while Q-G0104 was LOST at an 18.6 percent margin. With the range from won references spanning 283.44 to 290.22 EUR per piece and the 17 to 20 percent band winning 81 percent of the time, negotiation room is limited.",
+          "cited_reference_ids": [
+            "Q-G0085",
+            "Q-G0232"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites references, contains no invented facts, and meets the length constraints."
+        }
+      },
+      {
+        "id": "memo-008",
+        "kind": "judged",
+        "tags": [
+          "large-quantity"
+        ],
+        "latency_ms": 2635,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 1053.66 EUR per piece, a 20.7 percent margin on the cost estimate. Ostervald Engineering won Q-G0096 at 1017.08 EUR per piece with a 20.7 percent margin, and won FS-26-0044 with a 17.4 percent margin. The range from won references of 1011.57 to 1073.98 EUR per piece provides room to negotiate down to 1011.57 EUR per piece.",
+          "cited_reference_ids": [
+            "Q-G0096",
+            "FS-26-0044"
+          ]
+        },
+        "pass": false,
+        "detail": "checks ok · judge: no on no_invented_fact (The text adds an assumption about the negotiation room down to 1011.57 EUR, which is not explicitly stated in the data (the actual floor is 983.00 EUR).)",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": false,
+          "right_length": true,
+          "notes": "The text adds an assumption about the negotiation room down to 1011.57 EUR, which is not explicitly stated in the data (the actual floor is 983.00 EUR)."
+        }
+      },
+      {
+        "id": "memo-009",
+        "kind": "judged",
+        "tags": [
+          "heb"
+        ],
+        "latency_ms": 2561,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 1853.00 EUR per piece, which gives an 18.3 percent margin on the cost estimate matching the median won margin of the references. This aligns with reference Q-G0174 for Ostervald Engineering, which was WON at an 18.3 percent margin. The range from won references of 1832.81 to 1882.96 EUR per piece gives a clear boundary for negotiations.",
+          "cited_reference_ids": [
+            "Q-G0174"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, cites a valid reference, contains no invented facts, and is within the length limits."
+        }
+      },
+      {
+        "id": "memo-010",
+        "kind": "judged",
+        "tags": [
+          "s460"
+        ],
+        "latency_ms": 2612,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 887.25 EUR per piece, which gives a 20.7 percent margin on the cost estimate and matches the median won margin of the references, 20.7 percent. This is justified by FS-25-0512 for Ebrecht Fabrication, which was WON at 893.75 EUR per piece with a 19.4 percent margin. The range from won references of 853.87 to 895.15 EUR per piece leaves room to negotiate down if needed.",
+          "cited_reference_ids": [
+            "FS-25-0512"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites a reference, contains no invented facts, and meets the length constraints."
+        }
+      },
+      {
+        "id": "memo-011",
+        "kind": "judged",
+        "tags": [
+          "long-length"
+        ],
+        "latency_ms": 2243,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 3125.79 EUR per piece, a 19.2 percent margin on the cost estimate. Baltic Frames won Q-G0235 at a 19.2 percent margin and Q-G0211 at a 23.1 percent margin. With the range from won references spanning 2988.92 to 3284.31 EUR per piece and a 72 percent win rate in the 17 to 20 percent band, there is room to negotiate down if needed.",
+          "cited_reference_ids": [
+            "Q-G0235",
+            "Q-G0211"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites references, contains no invented facts, and is within the length limits."
+        }
+      },
+      {
+        "id": "memo-012",
+        "kind": "judged",
+        "tags": [
+          "short-length"
+        ],
+        "latency_ms": 2110,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 129.56 EUR per piece, which gives a 19.2 percent margin on the cost estimate matching the median won margin of the references. This is supported by quotation Q-G0165 won by Baltic Frames at a 20.5 percent margin and Q-G0221 won by Baltic Frames at an 18.6 percent margin. The range from won references of 123.89 to 135.96 EUR per piece gives solid room to negotiate down if needed.",
+          "cited_reference_ids": [
+            "Q-G0165",
+            "Q-G0221"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites references, contains no invented facts, and meets the length constraints."
+        }
+      },
+      {
+        "id": "memo-013",
+        "kind": "judged",
+        "tags": [
+          "other-customer"
+        ],
+        "latency_ms": 2017,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 347.07 EUR per piece, which gives a 15.7 percent margin on the cost estimate. It is justified by quotation Q-G0218 for Kestrel Modular, which was WON at a 15.6 percent margin, and Q-G0215, also WON at a 15.7 percent margin. The narrow won reference range of 346.86 to 347.28 EUR per piece leaves very little room to negotiate.",
+          "cited_reference_ids": [
+            "Q-G0218",
+            "Q-G0215"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, correctly cites references, contains no invented facts, and meets the length constraints."
+        }
+      },
+      {
+        "id": "memo-014",
+        "kind": "judged",
+        "tags": [
+          "heb"
+        ],
+        "latency_ms": 2062,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 1092.15 EUR per piece, which gives a 16.4 percent margin on the cost estimate. This is justified by Q-G0205 for Kestrel Modular, which was WON at a 16.4 percent margin. With the range from won references spanning 1083.09 to 1093.46 EUR per piece, you have narrow room to negotiate down to 1083.09 EUR.",
+          "cited_reference_ids": [
+            "Q-G0205"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites the provided reference, and stays within the length constraints without inventing facts."
+        }
+      },
+      {
+        "id": "memo-015",
+        "kind": "judged",
+        "tags": [
+          "ipe"
+        ],
+        "latency_ms": 2162,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 668.13 EUR per piece, which represents an 18.3 percent margin on the cost estimate. Quillon Structures won Q-G0144 at 642.56 EUR per piece with a 22.4 percent margin, while Q-G0187 was also WON with an 18.8 percent margin. The range from won references of 636.21 to 703.44 EUR per piece gives room to negotiate down to the 642.20 EUR floor.",
+          "cited_reference_ids": [
+            "Q-G0144",
+            "Q-G0187"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites references, contains no invented facts, and is within the length limits."
+        }
+      },
+      {
+        "id": "memo-016",
+        "kind": "judged",
+        "tags": [
+          "s460",
+          "rare"
+        ],
+        "latency_ms": 3476,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 1625.61 EUR per piece, which gives an 18.7 percent margin on the cost estimate. It is justified by reference Q-G0128 for Tessmer Fabrication, WON at an 18.4 percent margin, and reference Q-G0171 for Rudmark Industrial, WON at an 18.9 percent margin. The range from won references of 1593.29 to 1691.09 EUR per piece gives solid room to negotiate down to the 1555.80 EUR per piece floor.",
+          "cited_reference_ids": [
+            "Q-G0128",
+            "Q-G0171"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites references, contains no invented facts, and is within the length limits."
+        }
+      },
+      {
+        "id": "memo-017",
+        "kind": "judged",
+        "tags": [
+          "repeat-customer"
+        ],
+        "latency_ms": 2510,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 1860.49 EUR per piece, which gives a 19.6 percent margin on the cost estimate. It is justified by won quotation Q-G0045 for Rudmark Industrial at a 19.9 percent margin and Q-G0151 at a 22.0 percent margin. The range from won references of 1837.64 to 1917.74 EUR per piece leaves narrow room to negotiate.",
+          "cited_reference_ids": [
+            "Q-G0045",
+            "Q-G0151"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, concise, accurately cites references, and contains no invented facts."
+        }
+      },
+      {
+        "id": "memo-018",
+        "kind": "judged",
+        "tags": [
+          "other-customer"
+        ],
+        "latency_ms": 1975,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 338.72 EUR per piece, which gives an 18.9 percent margin on the cost estimate matching the median won margin of the references. This aligns with reference Q-G0019 for Varnholt Engineering, which was won at an 18.9 percent margin. The range from won references sits between 327.81 and 349.94 EUR per piece, giving some room to negotiate down to that lower bound.",
+          "cited_reference_ids": [
+            "Q-G0019"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, accurately cites a reference, contains no invented facts, and meets the length constraints."
+        }
+      },
+      {
+        "id": "memo-019",
+        "kind": "judged",
+        "tags": [
+          "unknown-size",
+          "no-refs",
+          "margins-differ"
+        ],
+        "latency_ms": 2222,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 183.32 EUR per piece, which gives a 19.1 percent margin on the cost estimate based on a median won margin of the references of 19.2 percent. It is justified by Q-G0239 for Halvorn Steel Supply, which was WON at a 19.7 percent margin, and Q-G0233 for Tessmer Fabrication, WON at an 18.6 percent margin. The range from won references of 181.41 to 185.97 EUR per piece leaves narrow room to negotiate.",
+          "cited_reference_ids": [
+            "Q-G0239",
+            "Q-G0233"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, concise, accurately cites references, and contains no invented facts."
+        }
+      },
+      {
+        "id": "memo-020",
+        "kind": "judged",
+        "tags": [
+          "repeat-customer"
+        ],
+        "latency_ms": 2651,
+        "mode": "live",
+        "checks_failed": [],
+        "output": {
+          "memo": "The suggested price is 1742.77 EUR per piece, a 19.0 percent margin on the cost estimate. For Corvin Steel Buildings, won reference Q-G0016 reached a 15.8 percent margin, while Q-G0163 was won at a 17.1 percent margin. The range from won references of 1677.57 to 1832.05 EUR per piece leaves room to negotiate down toward the lower bound.",
+          "cited_reference_ids": [
+            "Q-G0016",
+            "Q-G0163"
+          ]
+        },
+        "pass": true,
+        "detail": "checks ok · judge: all four yes",
+        "judge": {
+          "clear": true,
+          "cites_references": true,
+          "no_invented_fact": true,
+          "right_length": true,
+          "notes": "The text is clear, cites valid references, contains no invented facts, and meets the length constraints."
+        }
+      }
+    ]
+  },
+  "adversarial": null,
+  "control": null
+}

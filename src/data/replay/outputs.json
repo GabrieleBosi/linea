@@ -1,0 +1,292 @@
+[
+  {
+    "step": "cover_text",
+    "input_hash": "19d9c8f0d4cd9fc75aa15725e64fc62e4ad9dd1d131cc621dd04afce41dd9bd5",
+    "output": {
+      "text": "Dear Ebrecht Fabrication team,\n\nthank you for your request. Please find our revised quotation, R2, below, updating line 2 quantity from 40 to 60.\n\nLine 2: HEA 220 S355, 10000 mm, 60 pieces, total 48357.60 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    }
+  },
+  {
+    "step": "cover_text",
+    "input_hash": "505a1c63d85b4b370c28d013b494052927263991f1ecc3dcc26561fbd8d41cfe",
+    "output": {
+      "text": "Dear Torvane Structures team,\n\nthank you for your request. Please find our quotation, revision R2, below, which adds line L3 as a new line.\n\nLine 3: HEA 260 S355, 14000 mm, 100 pieces, total 143879.00 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    }
+  },
+  {
+    "step": "cover_text",
+    "input_hash": "7512bb89600e96e9e92a4668c01d92d8f6112623811171b5f8872418fc5d6723",
+    "output": {
+      "text": "Dear Ebrecht Fabrication team,\n\nPlease find our quotation, revision R1, below.\n\nLine 1: HEA 200 S355, 12000 mm, 120 pieces, total 93709.20 EUR.\n\nLine 2: HEA 220 S355, 10000 mm, 40 pieces, total 32238.40 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    }
+  },
+  {
+    "step": "cover_text",
+    "input_hash": "d4c78944afeab8269c074ead5519b1903223c387b59e2b400bc4a3fce7f4dd8d",
+    "output": {
+      "text": "Dear Ebrecht Fabrication team,\n\nthank you for your request. Please find our revised quotation, R2, below.\n\nChanges against the previous revision: Line 2 quantity changed from 40 to 60 pieces and unit price from 805.96 to 781.78 EUR.\n\nLine 2: HEA 220 S355, 10000 mm, 60 pieces, total 46906.80 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    }
+  },
+  {
+    "step": "cover_text",
+    "input_hash": "e77f6cf04348196afb8728ff3dbe36c92cd3759e336b68291b21a68751a7e076",
+    "output": {
+      "text": "Dear Torvane Structures team,\n\nthank you for your request. Please find our quotation, revision R1, below.\n\nLine 1: HEA 240 S460, 14000 mm, 100 pieces, total 143050.00 EUR, subject to technical validation.\n\nLine 2: IPE 300 S355, 12000 mm, 80 pieces, total 65554.40 EUR.\n\nThis offer is valid until 2026-10-22.\n\nFerralba Steel"
+    }
+  },
+  {
+    "step": "intake_extract",
+    "input_hash": "fa7ab2729ce9bf4bbf846e9dc2f33f5d13fe2f5f1ceaf5eedcdaf842160ebfbd",
+    "output": {
+      "customer_name_guess": "Ebrecht Fabrication",
+      "lines": [
+        {
+          "family": "HEA",
+          "size": 200,
+          "material": "S355",
+          "length_mm": 12000,
+          "quantity": 120,
+          "notes": "same as our order from last year",
+          "source_span": "120 pcs HEA 200 in S355, 12 m",
+          "confidence": 1
+        },
+        {
+          "family": "HEA",
+          "size": 220,
+          "material": "S355",
+          "length_mm": 10000,
+          "quantity": 40,
+          "notes": "",
+          "source_span": "40 pcs HEA 220 in S355, 10 m",
+          "confidence": 1
+        }
+      ],
+      "open_questions": [
+        "Which order from last year is the reference?"
+      ],
+      "stated_date": null,
+      "requested_delivery_date": null,
+      "delivery_hint": "by the end of November"
+    }
+  },
+  {
+    "step": "intake_extract",
+    "input_hash": "ff3cf8a8ba5437c4a300334148778813a7d2f700705681f01e11967ef1e2606e",
+    "output": {
+      "customer_name_guess": "Torvane Structures",
+      "lines": [
+        {
+          "family": "HEA",
+          "size": 240,
+          "material": "S460",
+          "length_mm": 14000,
+          "quantity": 100,
+          "notes": "critical item for the structural design",
+          "source_span": "HEA 240 in S460, 14 m long, 100 pieces",
+          "confidence": 1
+        },
+        {
+          "family": "IPE",
+          "size": 300,
+          "material": "S355",
+          "length_mm": 12000,
+          "quantity": 80,
+          "notes": "",
+          "source_span": "IPE 300 in S355, 12 m, 80 pieces",
+          "confidence": 1
+        }
+      ],
+      "open_questions": [],
+      "stated_date": null,
+      "requested_delivery_date": null,
+      "delivery_hint": null
+    }
+  },
+  {
+    "step": "price_memo",
+    "input_hash": "1ff04079ac7e8d36e09b5c9c3b65a9a3421e83da8462804fb1260b0bd3990738",
+    "output": {
+      "memo": "The suggested price is 780.91 EUR per piece, which gives a 20.7 percent margin on the cost estimate. This follows won quotation FS-25-0117 for Ebrecht Fabrication at 763.64 EUR per piece and a 21.4 percent margin, as well as won quotation Q-G0200 at a 20.7 percent margin. The range from won references sits between 751.53 and 790.88 EUR per piece, leaving solid room to negotiate down if needed.",
+      "cited_reference_ids": [
+        "FS-25-0117",
+        "Q-G0200"
+      ]
+    }
+  },
+  {
+    "step": "price_memo",
+    "input_hash": "246613e9603efed2cc7904087c302b3fafc12f58fb3bad0e6ce39c02c58382ef",
+    "output": {
+      "memo": "The suggested price is 1430.50 EUR per piece, an 18.2 percent margin on the cost estimate. Torvane Structures won quotation Q-G0091 at an 18.2 percent margin and quotation Q-G0127 at a 17.7 percent margin. The range from won references spans 1421.81 to 1437.53 EUR per piece, so there is little room to negotiate.",
+      "cited_reference_ids": [
+        "Q-G0091",
+        "Q-G0127"
+      ]
+    }
+  },
+  {
+    "step": "price_memo",
+    "input_hash": "4b5c0d4887d8a6296cb2f2bc78af3b26c8a46eb3de478ae93768cdf40492e868",
+    "output": {
+      "memo": "The suggested price is 819.43 EUR per piece, which gives a 22.7 percent margin on the cost estimate. Baltic Frames accepted Q-G0211 with a 23.1 percent margin, while Torvane Structures accepted Q-G0236 at a 24.9 percent margin. The range from won references sits between 779.57 and 842.89 EUR per piece, leaving solid room to negotiate down if challenged.",
+      "cited_reference_ids": [
+        "Q-G0211",
+        "Q-G0236"
+      ]
+    }
+  },
+  {
+    "step": "price_memo",
+    "input_hash": "7d91e54e4390f3906ccb4c990aeee713301a779ca6c13d8d2769456570dfa8fc",
+    "output": {
+      "memo": "The suggested price is 799.32 EUR per piece, which gives a 19.7 percent margin on the cost estimate. Past won quotes for Ebrecht Fabrication support this, including Q-G0204 with an 18.6 percent margin and Q-G0200 with a 20.7 percent margin. The range from won references of 779.43 to 817.11 EUR per piece gives room to negotiate down if needed.",
+      "cited_reference_ids": [
+        "Q-G0204",
+        "Q-G0200"
+      ]
+    }
+  },
+  {
+    "step": "price_memo",
+    "input_hash": "819b19864501e8bece7b511fdb9461b46c45fc5dbcc410bc946aaf03a6015a6e",
+    "output": {
+      "memo": "The suggested price is 1438.79 EUR per piece, which gives an 18.2 percent margin on the cost estimate. Torvane Structures won quotation Q-G0127 at a 17.7 percent margin and Q-G0011 at an 18.6 percent margin. With the range from won references spanning 1430.92 to 1446.74 EUR per piece, there is narrow room to negotiate.",
+      "cited_reference_ids": [
+        "Q-G0127",
+        "Q-G0011"
+      ]
+    }
+  },
+  {
+    "step": "price_memo",
+    "input_hash": "b5a912f61614d59c28e77c4a9a00be4ce3807fcf87a069e88d5afa0587a6c97b",
+    "output": {
+      "memo": "The suggested price is 805.96 EUR per piece, which gives an 18.3 percent margin on the cost estimate. This is justified by WON reference Q-G0204 for Ebrecht Fabrication at an 18.6 percent margin. With the range from won references spanning 798.63 to 829.85 EUR per piece, you have room to negotiate down to that lower bound.",
+      "cited_reference_ids": [
+        "Q-G0204"
+      ]
+    }
+  },
+  {
+    "step": "reply_interpret",
+    "input_hash": "c1dc03c7dc91b107203b365811cf2f86bfeb487bd9efdb95baffe961fba317d7",
+    "output": {
+      "decisions": [
+        {
+          "line_no": 3,
+          "decision": "accept",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "We accept the HEA 260 in S355 at 14 m as proposed, 100 pieces, at the revised price.",
+          "confidence": 0.99
+        }
+      ],
+      "overall": "accept_all",
+      "needs_clarification": []
+    }
+  },
+  {
+    "step": "reply_interpret",
+    "input_hash": "db0d374f693fc9848e5471c43a6d62fe30732b3d4559ab0d028b71f9b96ba056",
+    "output": {
+      "decisions": [
+        {
+          "line_no": 1,
+          "decision": "unclear",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "For the HEA 240 in S460 we wait for your technical confirmation of the 14 m length before we accept.",
+          "confidence": 0.95
+        },
+        {
+          "line_no": 2,
+          "decision": "accept",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "the IPE 300 line is accepted, please proceed with it.",
+          "confidence": 0.98
+        }
+      ],
+      "overall": "partial",
+      "needs_clarification": [
+        "Customer waits for technical confirmation of the 14 m length on line 1 before accepting."
+      ]
+    }
+  },
+  {
+    "step": "reply_interpret",
+    "input_hash": "ef3e9ff85e344f11dde1c70501c53e265a908d3a01b490ca33960b6b917eb0d3",
+    "output": {
+      "decisions": [
+        {
+          "line_no": 1,
+          "decision": "accept",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "Line 1 (HEA 200) is fine, please go ahead at the quoted price.",
+          "confidence": 0.98
+        },
+        {
+          "line_no": 2,
+          "decision": "change",
+          "changes": {
+            "quantity": 60,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "For line 2 we now need 60 pieces instead of 40. Given the higher volume we expect a better unit price than in your offer.",
+          "confidence": 0.95
+        }
+      ],
+      "overall": "partial",
+      "needs_clarification": []
+    }
+  },
+  {
+    "step": "reply_interpret",
+    "input_hash": "f907089741a5a01e98f9137d0b5f4277b890d87d8a1625aedd468f3c16e4ac16",
+    "output": {
+      "decisions": [
+        {
+          "line_no": 2,
+          "decision": "accept",
+          "changes": {
+            "quantity": null,
+            "length_mm": null,
+            "material": null,
+            "size": null,
+            "target_unit_price": null
+          },
+          "source_span": "Line 2 at 60 pieces is accepted at the revised price.",
+          "confidence": 0.98
+        }
+      ],
+      "overall": "accept_all",
+      "needs_clarification": [
+        "The customer mentions 'Please proceed with both lines.', but the revision contains only line 2."
+      ]
+    }
+  }
+]
