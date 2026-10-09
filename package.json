@@ -22,7 +22,8 @@
     "evals": "tsx scripts/evals.ts",
     "e2e": "playwright test",
     "e2e:full": "playwright test",
-    "replay:record": "tsx scripts/record-replay.ts"
+    "replay:record": "tsx scripts/record-replay.ts",
+    "og:render": "node scripts/og/render.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.24.0",

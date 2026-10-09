@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- The link-preview image, 1200 × 627. Rendered to public/og-image.png by scripts/og/render.mjs.
+     Not part of the app build. Colours and font follow src/index.css and the one-model diagram. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=block" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1200px; height: 627px; }
+      body {
+        font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+        background: #fafafa;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      header { padding: 52px 64px 0; }
+      .name { font-size: 30px; font-weight: 600; color: #2f5d8a; letter-spacing: -0.01em; }
+      .name span { color: #777; font-weight: 500; font-size: 22px; margin-left: 12px; }
+      h1 { margin-top: 10px; font-size: 46px; white-space: nowrap; line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; color: #222; max-width: 1060px; }
+      .diagram { flex: 1; display: flex; align-items: center; padding: 0 60px; }
+      .strip {
+        display: flex; justify-content: space-between; align-items: center;
+        background: #2f5d8a; color: #fff; padding: 24px 64px;
+        font-size: 23px; font-weight: 500; white-space: nowrap; gap: 32px;
+      }
+      .strip .url { font-weight: 400; opacity: 0.9; font-size: 20px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="name">Linea<span>Ferralba Steel, a fictional producer</span></div>
+      <h1>Quote-to-order with AI where it earns its place</h1>
+    </header>
+
+    <div class="diagram">
+      <svg viewBox="0 0 1080 222" width="1080" height="222" role="img" aria-label="A request with two lines, each with a commercial and a technical track; a line is executable when both are done">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#777" />
+          </marker>
+        </defs>
+        <style>
+          .box { fill: #fff; stroke: #2f5d8a; stroke-width: 2; }
+          .arrow { stroke: #777; stroke-width: 2; }
+          text { font-family: 'Inter', sans-serif; }
+        </style>
+
+        <!-- Request -->
+        <rect class="box" x="2" y="66" width="168" height="90" rx="10" />
+        <text x="86" y="106" text-anchor="middle" font-size="24" font-weight="600" fill="#333">Request</text>
+        <text x="86" y="134" text-anchor="middle" font-size="17" fill="#777">R-2026-0143</text>
+
+        <!-- Line 1 -->
+        <line class="arrow" x1="170" y1="111" x2="226" y2="52" marker-end="url(#arrow)" />
+        <rect class="box" x="228" y="10" width="520" height="84" rx="10" />
+        <text x="250" y="61" font-size="24" font-weight="600" fill="#333">L1</text>
+        <rect x="296" y="31" width="210" height="42" rx="21" fill="#e8f0f8" />
+        <text x="401" y="59" text-anchor="middle" font-size="19" fill="#1f4e79">commercial: agreed</text>
+        <rect x="518" y="31" width="214" height="42" rx="21" fill="#e3f3e6" />
+        <text x="625" y="59" text-anchor="middle" font-size="19" fill="#1e6b32">technical: feasible</text>
+        <line class="arrow" x1="748" y1="52" x2="788" y2="52" marker-end="url(#arrow)" />
+        <text x="798" y="60" font-size="21" font-weight="600" fill="#1e6b32">✓ executable</text>
+
+        <!-- Line 2 -->
+        <line class="arrow" x1="170" y1="111" x2="226" y2="168" marker-end="url(#arrow)" />
+        <rect class="box" x="228" y="128" width="520" height="84" rx="10" />
+        <text x="250" y="179" font-size="24" font-weight="600" fill="#333">L2</text>
+        <rect x="296" y="149" width="210" height="42" rx="21" fill="#e8f0f8" />
+        <text x="401" y="177" text-anchor="middle" font-size="19" fill="#1f4e79">commercial: quoted</text>
+        <rect x="518" y="149" width="214" height="42" rx="21" fill="#fdf1d6" />
+        <text x="625" y="177" text-anchor="middle" font-size="19" fill="#8a5a00">technical: pending</text>
+        <line class="arrow" x1="748" y1="170" x2="788" y2="170" marker-end="url(#arrow)" />
+        <text x="798" y="178" font-size="21" fill="#777">– not yet</text>
+
+        <!-- Order -->
+        <line x1="968" y1="16" x2="968" y2="206" stroke="#777" stroke-width="2" stroke-dasharray="6 5" />
+        <text x="982" y="98" font-size="17" fill="#777">all lines</text>
+        <text x="982" y="120" font-size="17" fill="#777">executable</text>
+        <text x="982" y="148" font-size="24" font-weight="600" fill="#333">Order</text>
+      </svg>
+    </div>
+
+    <div class="strip">
+      <div>4 AI steps · evals on every one · a person approves every change</div>
+      <div class="url">linea-quote-to-order.netlify.app</div>
+    </div>
+  </body>
+</html>
