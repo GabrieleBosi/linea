@@ -1,0 +1,7 @@
+# The app shell must revalidate on every load, so a deploy is picked up at once.
+/*
+  Cache-Control: no-cache
+
+# Vite fingerprints everything under /assets: a new build gets new file names.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

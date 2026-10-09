@@ -1,0 +1,16 @@
+node_modules
+dist
+.env
+.env.local
+.netlify
+supabase/.temp
+playwright-report
+test-results
+.playwright-mcp
+deno.lock
+.archive
+
+# Local agent setup, never published
+.claude/
+.mcp.json
+CLAUDE.md

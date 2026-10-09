@@ -1,0 +1,21 @@
+# The public site is the static demo: no functions, no environment variables.
+[build]
+  command = "npm run build:static"
+  publish = "dist"
+
+# The full stack's functions live outside the default netlify/functions folder, so a deploy of
+# this repository never ships them. They run locally only: npm run dev:live
+[functions]
+  node_bundler = "esbuild"
+
+[dev]
+  # Pin the framework: the CLI otherwise detects "TanStack Router" and waits on port 3000.
+  # Do not set `command` here: an explicit command makes the dev proxy forget the
+  # framework and apply the SPA fallback to Vite module paths.
+  framework = "vite"
+  targetPort = 5173
+  port = 8888
+  autoLaunch = false
+
+# The single-page-app fallback lives in public/_redirects, so it ships in dist
+# and does not intercept the Vite module requests under `netlify dev`.
