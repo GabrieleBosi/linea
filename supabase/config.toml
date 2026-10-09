@@ -1,0 +1,3 @@
+# Supabase project reference for Linea. Migrations are applied through the
+# Supabase MCP server. No CLI link is needed.
+project_id = "linea-dev"
